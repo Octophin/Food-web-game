@@ -20,7 +20,7 @@
  d3.json("data/data.json", function (error, graph) {
    if (error) throw error;
 
-   //Convert link animal names to numbers
+   // Convert link animal names to index numbers
 
    graph.links.forEach(function (link, index) {
 
@@ -67,7 +67,15 @@
 
      // Add the animal to the answers section
 
-     $("#answers").append('<img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.jpg" id="' + node.name + '" />');
+     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.jpg" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name + '</button></div>');
+
+     $("#answers").on("click", ".answer button", function (e) {
+
+       var animal = graph.nodes[$(e.target).attr("data-index")];
+
+       console.log(animal.description);
+
+     });
 
      // build the arrow.
      svg.append("svg:defs").selectAll("marker")
