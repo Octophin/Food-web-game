@@ -23,6 +23,9 @@
 
    // Create array for levels to see how many nodes there are in each level
 
+   window.totalPoints = graph.nodes.length;
+   window.currentPoints = 0;
+
    var levelNodes = {};
 
    graph.nodes.forEach(function (node, index) {
@@ -129,6 +132,14 @@
        if (current === d.name) {
 
          d3.select(this).style("fill", "url('#" + d.name + "')");
+
+         window.currentPoints += 1;
+
+         if (window.currentPoints === window.totalPoints) {
+
+           alert("You have won!")
+
+         }
 
        } else {
 
