@@ -28,24 +28,24 @@
   ],
   "links": [
     {
-      "source": 1,
-      "target": 0
+      "source": "cow",
+      "target": "grass"
     },
     {
-      "source": 2,
-      "target": 1
+      "source": "wolf",
+      "target": "cow"
     },
     {
-      "source": 3,
-      "target": 1
+      "source": "lion",
+      "target": "cow"
     },
     {
-      "source": 4,
-      "target": 0
+      "source": "beaver",
+      "target": "grass"
     },
     {
-      "source": 3,
-      "target": 0
+      "source": "wolf",
+      "target": "grass"
     }
   ]
 }

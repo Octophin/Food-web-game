@@ -12,12 +12,35 @@
  var svg = d3.select("body").append("svg")
    .attr("width", width)
    .attr("height", height)
+   .attr("id", "world");
 
  var link = svg.selectAll(".link"),
    node = svg.selectAll(".node");
 
  d3.json("data/data.json", function (error, graph) {
    if (error) throw error;
+
+   //Convert link animal names to numbers
+
+   graph.links.forEach(function (link, index) {
+
+     graph.nodes.forEach(function (animal, animalIndex) {
+
+       if (link.source === animal.name) {
+
+         graph.links[index].source = animalIndex;
+
+       }
+
+       if (link.target === animal.name) {
+
+         graph.links[index].target = animalIndex;
+
+       }
+
+     });
+
+   })
 
    var defs = svg.append('svg:defs');
 
@@ -139,11 +162,14 @@
 
          if (window.currentPoints === window.totalPoints) {
 
-           alert("You have won!")
+           $("#message").text("Congratulations! You have won!").fadeIn();
+
 
          }
 
        } else {
+
+
 
        }
 
