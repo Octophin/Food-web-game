@@ -1,0 +1,19 @@
+  .link {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  .node {
+    cursor: pointer;
+    fill: #ccc;
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  .node.fixed {
+    fill: #f00;
+  }
+  #answers img {
+    width: 50px;
+    height: 50px;
+    overflow:hidden;
+    float:left;
+  }

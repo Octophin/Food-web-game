@@ -1,0 +1,51 @@
+{
+  "nodes": [
+    {
+      "colour": "green",
+      "name": "grass",
+      "level": 0
+    },
+    {
+      "colour": "black",
+      "name": "cow",
+      "level": 1
+    },
+    {
+      "colour": "yellow",
+      "name": "lion",
+      "level": 2
+    },
+    {
+      "colour": "red",
+      "name": "wolf",
+      "level": 2
+    },
+    {
+      "colour": "brown",
+      "name": "beaver",
+      "level": 1
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 0
+    },
+    {
+      "source": 2,
+      "target": 1
+    },
+    {
+      "source": 3,
+      "target": 1
+    },
+    {
+      "source": 4,
+      "target": 0
+    },
+    {
+      "source": 3,
+      "target": 0
+    }
+  ]
+}
