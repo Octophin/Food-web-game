@@ -129,6 +129,8 @@
      .attr("ondragover", "event.preventDefault()")
      .on("drop", function (d) {
 
+       d3.event.preventDefault();
+
        if (current === d.name) {
 
          d3.select(this).style("fill", "url('#" + d.name + "')");
