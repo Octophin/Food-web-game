@@ -1,7 +1,7 @@
  var width = 960,
-   height = 500;
+   height = 1000;
 
- var levels = [400, 250, 100];
+ var levels = [700, 500, 300, 100];
 
  var force = d3.layout.force()
    .size([width, height])
@@ -24,7 +24,7 @@
 
    graph.links.forEach(function (link, index) {
 
-     graph.nodes.forEach(function (animal, animalIndex) {
+     graph.species.forEach(function (animal, animalIndex) {
 
        if (link.source === animal.name) {
 
@@ -46,32 +46,32 @@
 
    // Create array for levels to see how many nodes there are in each level
 
-   window.totalPoints = graph.nodes.length;
+   window.totalPoints = graph.species.length;
    window.currentPoints = 0;
 
    var levelNodes = {};
 
-   graph.nodes.forEach(function (node, index) {
+   graph.species.forEach(function (node, index) {
 
      defs.append("svg:pattern")
        .attr("id", node.name)
-       .attr("width", 100)
-       .attr("height", 100)
+       .attr("width", 1)
+       .attr("height", 1)
        .append("svg:image")
        .attr("patternUnits", "userSpaceOnUse")
-       .attr("xlink:href", "images/" + node.name + ".jpg")
-       .attr("width", 100)
-       .attr("height", 100)
-       .attr("x", 0)
-       .attr("y", 0);
+       .attr("xlink:href", "images/" + node.name + ".png")
+       .attr("width", 130)
+       .attr("height", 130)
+       .attr("x", -10)
+       .attr("y", -10);
 
      // Add the animal to the answers section
 
-     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.jpg" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name + '</button></div>');
+     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name + '</button></div>');
 
      $("#answers").on("click", ".answer button", function (e) {
 
-       var animal = graph.nodes[$(e.target).attr("data-index")];
+       var animal = graph.species[$(e.target).attr("data-index")];
 
        console.log(animal.description);
 
@@ -102,7 +102,7 @@
 
    });
 
-   graph.nodes.forEach(function (node, number) {
+   graph.species.forEach(function (node, number) {
 
      node.y = levels[node.level];
 
@@ -114,7 +114,7 @@
 
        if (item === node) {
 
-         node.x = index * 100 + 200 + offset;
+         node.x = index * 200 + 200 + offset;
 
        }
 
@@ -125,7 +125,7 @@
    })
 
    force
-     .nodes(graph.nodes)
+     .nodes(graph.species)
      .links(graph.links)
      .start();
 
@@ -143,14 +143,14 @@
 
      })
 
-   node = node.data(graph.nodes)
+   node = node.data(graph.species)
      .enter().append("circle")
      .attr("id", function (d) {
 
        return d.name;
 
      })
-     .attr("r", 30)
+     .attr("r", 50)
      .style("fill", function (d) {
 
        return d.colour;
@@ -177,7 +177,7 @@
 
        } else {
 
-
+//         $("body").effect("shake");
 
        }
 

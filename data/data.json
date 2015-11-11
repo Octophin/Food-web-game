@@ -1,56 +1,43 @@
 {
-  "nodes": [
+  "species": [
     {
-      "colour": "green",
-      "name": "grass",
-      "level": 0,
-      "description": "Grass is green and amazing."
-    },
-    {
-      "colour": "black",
-      "name": "cow",
-      "level": 1,
-      "description": "Cows are stripy and amazing"
-    },
-    {
-      "colour": "yellow",
-      "name": "lion",
+      "colour": "purple",
+      "name": "peafowl",
       "level": 2,
-      "description": "Lions are sort of yellow and exciting"
+      "description": "Description to go here."
+    },
+     {
+    "colour": "orange",
+    "name": "porcupine",
+    "level": 3,
+    "description": "Description to go here."
+    },
+    {
+      "colour": "blue",
+      "name": "cockroach",
+      "level": 1,
+      "description": "Description to go here."
     },
     {
       "colour": "red",
-      "name": "wolf",
+      "name": "serpent-eagle",
       "level": 2,
-      "descrpiton": "wolves are not red but are exciting"
-    },
-    {
-      "colour": "brown",
-      "name": "beaver",
-      "level": 1,
-      "description": "beavers are brown and exciting"
+      "description": "Description to go here."
     }
   ],
   "links": [
     {
-      "source": "cow",
-      "target": "grass"
+      "source": "peafowl",
+      "target": "cockroach"
     },
     {
-      "source": "wolf",
-      "target": "cow"
+      "source": "serpent-eagle",
+      "target": "peafowl"
     },
     {
-      "source": "lion",
-      "target": "cow"
-    },
-    {
-      "source": "beaver",
-      "target": "grass"
-    },
-    {
-      "source": "wolf",
-      "target": "grass"
+      "source": "porcupine",
+      "target": "cockroach"
     }
+
   ]
 }

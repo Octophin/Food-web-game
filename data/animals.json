@@ -1,0 +1,121 @@
+"species": [
+  {
+    "colour": "green",
+    "name": "ants",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "asiatic-lion",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "carrion",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "chital",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "cockroach",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "feral-dog",
+    "level": 3,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "golden-jackal",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "grey-mongoose",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "hanuman-langur",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "hyaena",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "indian-hare",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "indian-star-tortoise",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "leopard",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "nilgai",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "pangolin",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "peafowl",
+    "level": 1,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "porcupine",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "rock-python",
+    "level": 0,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "serpent-eagle",
+    "level": 3,
+    "description": "Description to go here."
+    },
+  {
+    "colour": "green",
+    "name": "vulture",
+    "level": 0,
+    "description": "Description to go here."
+    }
