@@ -1,7 +1,7 @@
- var width = 960,
-   height = 1000;
+ var width = 1500,
+   height = 550;
 
- var levels = [700, 500, 300, 100];
+ var levels = [0, 100, 200, 300, 400, 500];
 
  var force = d3.layout.force()
    .size([width, height])
@@ -60,10 +60,10 @@
        .append("svg:image")
        .attr("patternUnits", "userSpaceOnUse")
        .attr("xlink:href", "images/" + node.name + ".png")
-       .attr("width", 130)
-       .attr("height", 130)
-       .attr("x", -10)
-       .attr("y", -10);
+       .attr("width", 70)
+       .attr("height", 70)
+       .attr("x", -5)
+       .attr("y", -5);
 
      // Add the animal to the answers section
 
@@ -83,7 +83,7 @@
        .enter().append("svg:marker") // This section adds in the arrows
        .attr("id", String)
        .attr("viewBox", "0 -5 10 10")
-       .attr("refX", 40)
+       .attr("refX", 30)
        .style("fill", node.colour)
        .attr("refY", 0)
        .attr("markerWidth", 12)
@@ -108,7 +108,7 @@
 
      // Calculate centre offset
 
-     var offset = 500 - levelNodes[node.level].length * 200;
+     var offset = 1300 - levelNodes[node.level].length * 200;
 
      levelNodes[node.level].forEach(function (item, index) {
 
@@ -120,7 +120,7 @@
 
      })
 
-     node.fixed = true;
+          node.fixed = true;
 
    })
 
@@ -150,14 +150,14 @@
        return d.name;
 
      })
-     .attr("r", 50)
+     .attr("r", 30)
      .style("fill", function (d) {
 
        return d.colour;
 
      })
      .style("stroke", "black")
-     .attr("ondragover", "event.preventDefault()")
+   .attr("ondragover", "event.preventDefault()")
      .on("drop", function (d) {
 
        d3.event.preventDefault();
@@ -177,7 +177,7 @@
 
        } else {
 
-//         $("body").effect("shake");
+         //         $("body").effect("shake");
 
        }
 

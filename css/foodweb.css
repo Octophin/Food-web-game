@@ -1,6 +1,6 @@
 * {
   max-width: 100%;
-  overflow: hidden;
+/*  overflow: hidden;*/
   font-family: sans-serif;
 }
 .link {
@@ -18,21 +18,23 @@
 }
 #answers {float:left;}
 #answers img {
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 65px;
   overflow: hidden;
   cursor: move;
   margin: auto;
   display: block;
 }
 .answer {
-  width: 100px;
+  height:70px;
+  width: 65px;
   float: left;
   padding: 10px;
 }
 .answer button {
   display: block;
   width: 100%;
+  font-size:50%;
   background-color: white;
   color:black;
   border-style:solid;

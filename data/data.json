@@ -1,43 +1,339 @@
 {
   "species": [
     {
-      "colour": "purple",
-      "name": "peafowl",
-      "level": 2,
+      "colour": "AliceBlue",
+      "name": "ants",
+      "level": 4,
       "description": "Description to go here."
     },
-     {
-    "colour": "orange",
-    "name": "porcupine",
-    "level": 3,
-    "description": "Description to go here."
-    },
     {
-      "colour": "blue",
-      "name": "cockroach",
+      "colour": "Aqua",
+      "name": "asiatic-lion",
       "level": 1,
       "description": "Description to go here."
     },
     {
-      "colour": "red",
-      "name": "serpent-eagle",
+      "colour": "Bisque",
+      "name": "carrion",
+      "level": 3,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "BlueViolet",
+      "name": "chital",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "BurlyWood",
+      "name": "cockroach",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "Chartreuse",
+      "name": "feral-dog",
       "level": 2,
       "description": "Description to go here."
-    }
-  ],
+    },
+    {
+      "colour": "Coral",
+      "name": "golden-jackal",
+      "level": 2,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "CornflowerBlue",
+      "name": "grey-mongoose",
+      "level": 2,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "Cyan",
+      "name": "hanuman-langur",
+      "level": 3,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "DarkCyan",
+      "name": "hyaena",
+      "level": 1,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "DarkKhaki",
+      "name": "indian-hare",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "DarkOrchid",
+      "name": "indian-star-tortoise",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "DarkSeaGreen",
+      "name": "leopard",
+      "level": 1,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "FireBrick",
+      "name": "nilgai",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "Fuchsia",
+      "name": "pangolin",
+      "level": 3,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "Gold",
+      "name": "peafowl",
+      "level": 3,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "HotPink",
+      "name": "porcupine",
+      "level": 4,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "IndianRed",
+      "name": "rock-python",
+      "level": 2,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "Indigo",
+      "name": "serpent-eagle",
+      "level": 1,
+      "description": "Description to go here."
+    },
+    {
+      "colour": "LawnGreen",
+      "name": "vulture",
+      "level": 1,
+      "description": "Description to go here."
+    }, {
+      "colour": "LightGreen",
+      "name": "tree",
+      "level": 5,
+      "description": "Description to go here."
+    }, {
+      "colour": "LightCoral",
+      "name": "flowering-plant",
+      "level": 5,
+      "description": "Description to go here."
+    }, {
+      "colour": "LightSkyBlue",
+      "name": "grasses",
+      "level": 5,
+      "description": "Description to go here."
+    }, {
+      "colour": "Magenta",
+      "name": "fruit",
+      "level": 5,
+      "description": "Description to go here."
+    }],
   "links": [
     {
       "source": "peafowl",
+      "target": "tree"
+    },
+    {
+      "source": "hanuman-langur",
+      "target": "tree"
+    },
+    {
+      "source": "porcupine",
+      "target": "tree"
+    }, {
+      "source": "cockroach",
+      "target": "tree"
+    },
+    {
+      "source": "indian-hare",
+      "target": "flowering-plant"
+    },
+    {
+      "source": "indian-star-tortoise",
+      "target": "flowering-plant"
+    },
+    {
+      "source": "nilgai",
+      "target": "flowering-plant"
+    }, {
+      "source": "chital",
+      "target": "flowering-plant"
+    },
+    {
+      "source": "peafowl",
+      "target": "cockroach"
+    }, {
+      "source": "grey-mongoose",
       "target": "cockroach"
     },
     {
+      "source": "peafowl",
+      "target": "ants"
+    }, {
+      "source": "hanuman-langur",
+      "target": "ants"
+    },
+    {
+      "source": "pangolin",
+      "target": "ants"
+    },
+    {
+      "source": "feral-dog",
+      "target": "indian-hare"
+    },
+    {
+      "source": "hyaena",
+      "target": "indian-hare"
+    },
+    {
+      "source": "serpent-eagle",
+      "target": "indian-hare"
+    },
+    {
+      "source": "leopard",
+      "target": "indian-hare"
+    },
+    {
+      "source": "golden-jackal",
+      "target": "chital"
+    },
+    {
+      "source": "asiatic-lion",
+      "target": "chital"
+    }, {
+      "source": "leopard",
+      "target": "chital"
+    },
+    {
+      "source": "rock-python",
+      "target": "chital"
+    },
+    {
+      "source": "hyaena",
+      "target": "porcupine"
+    },
+    {
+      "source": "hyaena",
+      "target": "nilgai"
+    },
+    {
+      "source": "asiatic-lion",
+      "target": "nilgai"
+    },
+    {
+      "source": "leopard",
+      "target": "nilgai"
+    },
+    {
+      "source": "feral-dog",
+      "target": "peafowl"
+    }, {
       "source": "serpent-eagle",
       "target": "peafowl"
     },
     {
-      "source": "porcupine",
-      "target": "cockroach"
+      "source": "golden-jackal",
+      "target": "peafowl"
+    },
+    {
+      "source": "leopard",
+      "target": "peafowl"
+    },
+    {
+      "source": "leopard",
+      "target": "hanuman-langur"
+    },
+    {
+      "source": "serpent-eagle",
+      "target": "hanuman-langur"
+    },
+    {
+      "source": "rock-python",
+      "target": "hanuman-langur"
+    },
+    {
+      "source": "asiatic-lion",
+      "target": "pangolin"
+    },
+    {
+      "source": "leopard",
+      "target": "pangolin"
+    },
+    {
+      "source": "vulture",
+      "target": "carrion"
+    },
+    {
+      "source": "hyaena",
+      "target": "carrion"
+    },
+    {
+      "source": "feral-dog",
+      "target": "carrion"
+    },
+    {
+      "source": "cockroach",
+      "target": "carrion"
+    },
+    {
+      "source": "asiatic-lion",
+      "target": "feral-dog"
+    },
+    {
+      "source": "leopard",
+      "target": "feral-dog"
+    },
+    {
+      "source": "hyaena",
+      "target": "golden-jackal"
+    },
+    {
+      "source": "rock-python",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "leopard",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "serpent-eagle",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "hyaena",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "golden-jackal",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "feral-dog",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "serpent-eagle",
+      "target": "rock-python"
+    },
+    {
+      "source": "hyaena",
+      "target": "rock-python"
+    },
+    {
+      "source": "leopard",
+      "target": "rock-python"
     }
-
   ]
 }
