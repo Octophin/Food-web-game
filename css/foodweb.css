@@ -5,14 +5,24 @@
 }
 html,
 body {
+  font-size:16px;
   margin: 0px;
   height: 100%;
 }
-#world {position: relative; z-index: 1;}
+body {
+  box-sizing: border-box;
+  margin: 20px auto;
+  position: relative;
+  width: 1161px;
+}
+#world {
+  position: relative;
+  z-index: 1;
+}
 .level {
   display: block;
   width: 100%;
-  position: fixed;
+  position: absolute;
 }
 .link {
   stroke: #000;
@@ -42,6 +52,13 @@ body {
   cursor: move;
   margin: auto;
   display: block;
+}
+.level-name {
+  float: right;
+  margin: 10px;
+  font-size:120%;
+  text-align: right;
+  width:100px;
 }
 .answer {
   height: 70px;

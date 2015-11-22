@@ -3,11 +3,14 @@
    levelHeight = 130,
    topOffset = 70,
    spacing = 100,
-   levels = [];
+   levelNames = ["hello", "world", "this", "another", "what"],
+   levels = [],
+   answerText = "Congratulations, you have won",
+   introText = "Welcome to the Food Web game";
 
  var levelCounter = 0;
 
- while (levelCounter < 6) {
+ while (levelCounter < 5) {
 
    levels.push(levelCounter * levelHeight + topOffset)
 
@@ -18,10 +21,10 @@
  // Add in level background div
 
  levels.forEach(function (element, index) {
-   
+
    var offset = levelHeight * index;
-   
-   $( "<div class='level' style='top:"+offset+"px; height:"+levelHeight+"px'></div>" ).appendTo("body");
+
+   $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
 
  });
 
@@ -188,11 +191,12 @@
 
          d3.select(this).style("fill", "url('#" + d.name + "')");
 
+         $("img#" + d.name).closest(".answer").hide();
          window.currentPoints += 1;
 
          if (window.currentPoints === window.totalPoints) {
 
-           $("#message").text("Congratulations! You have won!").fadeIn();
+           $("#complete").text(answerText).show();
 
 
          }
@@ -204,6 +208,11 @@
        }
 
      })
+
+   // Add in intro text
+
+   $("#intro").html(introText);
+
  });
 
  function tick() {
