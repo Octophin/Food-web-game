@@ -1,7 +1,19 @@
- var width = 1500,
-   height = 550;
+ var width = 800,
+   height = 620,
+   levelHeight = 130,
+   topOffset = 50,
+   spacing = 100,
+   levels = [];
 
- var levels = [0, 100, 200, 300, 400, 500];
+ var levelCounter = 0;
+
+ while (levelCounter < 6) {
+
+   levels.push(levelCounter * levelHeight + topOffset)
+
+   levelCounter += 1;
+
+ }
 
  var force = d3.layout.force()
    .size([width, height])
@@ -104,23 +116,23 @@
 
    graph.species.forEach(function (node, number) {
 
-     node.y = levels[node.level];
+     node.y = levels[node.level - 1];
 
      // Calculate centre offset
 
-     var offset = 1300 - levelNodes[node.level].length * 200;
+     var offset = width / 2 - ((levelNodes[node.level].length * spacing) / 2);
 
      levelNodes[node.level].forEach(function (item, index) {
 
        if (item === node) {
 
-         node.x = index * 200 + 200 + offset;
+         node.x = index * spacing + offset;
 
        }
 
      })
 
-          node.fixed = true;
+     node.fixed = true;
 
    })
 
@@ -157,7 +169,7 @@
 
      })
      .style("stroke", "black")
-   .attr("ondragover", "event.preventDefault()")
+     .attr("ondragover", "event.preventDefault()")
      .on("drop", function (d) {
 
        d3.event.preventDefault();
