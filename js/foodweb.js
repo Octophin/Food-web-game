@@ -2,7 +2,7 @@
    height = 640,
    levelHeight = 130,
    topOffset = 70,
-   spacing = 100;
+   spacing = 80;
 
  var levels = [];
 
@@ -97,13 +97,18 @@
 
      // Add the animal to the answers section
 
-     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name + '</button></div>');
+     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name.replace("-", " ") + '</button></div>');
 
      $("#answers").on("click", ".answer button", function (e) {
 
        var animal = graph.species[$(e.target).attr("data-index")];
 
-       console.log(animal.description);
+       $("#answers").hide();
+
+       $("#message").show().find(".inner").text(animal.description);
+       
+       $("#info-title").text(animal.name.toUpperCase());
+       $("#info-image").attr("src", "images/" + animal.name + ".png");
 
      });
 
@@ -180,7 +185,7 @@
        return d.name;
 
      })
-     .attr("r", 30)
+     .attr("r", 25)
      .style("fill", function (d) {
 
        return d.colour;
@@ -217,6 +222,13 @@
    // Add in intro text
 
    $("#intro").html(introText);
+
+   $("#close-info").click(function () {
+
+     $("#message").hide();
+     $("#answers").show();
+
+   })
 
  });
 

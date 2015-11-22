@@ -1,7 +1,7 @@
 {
   "settings": {
-    "introText": "Welcome to the foodweb game",
-    "completeText": "Congratulations!",
+    "introText": "<p>The aim of this game is to drag and drop the animals of the Gir Forest into the correct place in the food web. By clicking on the animals, you will get some extra information to help you work out who eats who. The arrows show what is eaten by each animal so follow these to make sure the animals are in the right place. Good luck!</p><p>Top Tip: Start from the bottom and work your way up the food web. It’s easier this way!</p>",
+    "completeText": "Congratulations!You have successfully completed the Gir Forest food web and can now see how complex the ecosystem is. Everything is dependent on each other for survival.",
     "levelNames": ["predators", "third consumers", "second consumers", "first consumers", "producers"]
   },
   "species": [
@@ -9,141 +9,141 @@
       "colour": "AliceBlue",
       "name": "ants",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Ants feed primarily on fruits. However, they are eaten by many insectivores including peafowl and Hanuman langurs. They are also the main diet for pangolins so are important in the food web."
     },
     {
       "colour": "Aqua",
       "name": "asiatic-lion",
       "level": 1,
-      "description": "Description to go here."
+      "description": "Asiatic Lions are an apex predator and have no predators other than humans. Their prey are often antelopes and deer such as chital and nilgai but will also sometimes feed on feral dogs and pangolin."
     },
     {
       "colour": "Bisque",
       "name": "carrion",
       "level": 3,
-      "description": "Description to go here."
+      "description": "Carrion means the meat of dead animals. This is an extremely important food source for scavengers within a food web. Birds like vultures rely on carrion, but it is also eaten by animals like hyaenas and feral dogs. Some insects like cockroaches also eat carrion."
     },
     {
       "colour": "BlueViolet",
       "name": "chital",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Chital are a small deer and normally eat a mixture of grasses, flowers and fruits. Because of their smaller size, they are often prey for a variety of predators such as jackals, pythons, Asiatic lions and Indian leopards."
     },
     {
       "colour": "BurlyWood",
       "name": "cockroach",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Cockroaches are an important part of the food web as they are detritivores and eat dead things, mostly plant material like trees, grasses and fruit. They are eaten by many small consumers like mongoose and peafowl."
     },
     {
       "colour": "Chartreuse",
       "name": "feral-dog",
       "level": 2,
-      "description": "Description to go here."
+      "description": "Feral dogs are an interesting part of the Gir forest food web as technically they are stray domestic dogs that now live in wild groups. They compete with vultures and eat a lot of carrion but also sometimes hunt smaller animals like peafowl and Indian hare. They don’t have many predators but lions or leopards may occasionally catch them. "
     },
     {
       "colour": "Coral",
       "name": "golden-jackal",
       "level": 2,
-      "description": "Description to go here."
+      "description": "Golden jackals are a species of wild dog and feed on a range of small species including peafowl, Indian hare and small deer such as chital. As a hunter themselves, golden jackals have few predators but are sometimes caught by hyaenas."
     },
     {
       "colour": "CornflowerBlue",
       "name": "grey-mongoose",
       "level": 2,
-      "description": "Description to go here."
+      "description": "Indian Grey Mongooses are small carnivores which mostly eat small invertebrates like cockroaches and small mammals like Indian hare. Due to their small size, mongooses are commonly eaten by many predators including pythons, leopards, eagles, hyaenas, jackals and feral dogs."
     },
     {
       "colour": "Cyan",
       "name": "hanuman-langur",
       "level": 3,
-      "description": "Description to go here."
+      "description": "Hanuman langurs are primates and eat mostly tree leaves and grasses. They will also eat small insects like ants as well. Due to their size, they are a common prey species for animals like leopards, eagles and pythons."
     },
     {
       "colour": "DarkCyan",
       "name": "hyaena",
       "level": 1,
-      "description": "Description to go here."
+      "description": "Hyaenas are an apex predator and scavenger so will often eat carrion. However they will also eat a range of other prey including snakes, mongoose, jackals, nilgai, hare and rarely, even porcupines!"
     },
     {
       "colour": "DarkKhaki",
       "name": "indian-hare",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Indian Hare are herbivorous. In the wet season, hares eat mostly grass shoots but in the dry season they tend to eat more flowering plants. Despite being able to run very fast, Indian Hare have lots of predators including feral dogs, hyaenas, jackals, mongoose, eagles and snakes."
     },
     {
       "colour": "DarkOrchid",
       "name": "indian-star-tortoise",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Indian Star Tortoises are mostly herbivorous. The majority of their diet includes flowers, grasses and fruits. Adult tortoises are rarely predated due to their camouflaged pattern. However, their eggs and young are often eaten by eagles, snakes and dogs."
     },
     {
       "colour": "DarkSeaGreen",
       "name": "leopard",
       "level": 1,
-      "description": "Description to go here."
+      "description": "Indian Leopards are an apex predator. They have no natural predators. However, they have a varied diet of smaller animals which includes pythons, mongooses, feral dogs, Hanuman langurs, peafowl, pangolins, chital, nilgai and Indian hare."
     },
     {
       "colour": "FireBrick",
       "name": "nilgai",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Nilgai spend a lot of their time grazing so the main part of their diet is grass. They may sometimes eat other items like fruits. Nilgai are a large antelope so their predators are usually the apex predators such as Asiatic lions, hyaenas and Indian leopards."
     },
     {
       "colour": "Fuchsia",
       "name": "pangolin",
       "level": 3,
-      "description": "Description to go here."
+      "description": "Pangolins are an amazing animal that feeds almost entirely on ants and termites.  Due to their extremely hard armour, they don’t have many predators but can be occasionally eaten by leopards or lions."
     },
     {
       "colour": "Gold",
       "name": "peafowl",
       "level": 3,
-      "description": "Description to go here."
+      "description": "Peafowl have a mixed diet of insects such as ants and cockroaches, but also fruits and leaves from trees. Without much defence, they also have predators which include leopards, jackals, eagles and even feral dogs."
     },
     {
       "colour": "HotPink",
       "name": "porcupine",
       "level": 4,
-      "description": "Description to go here."
+      "description": "Porcupines eat mostly plant material but particularly fruits, tree roots and grains. Because of their dangerous spines, porcupines are difficult to eat but sometimes get predated on by Indian leopards and hyaenas. "
     },
     {
       "colour": "IndianRed",
       "name": "rock-python",
       "level": 2,
-      "description": "Description to go here."
+      "description": "Indian Rock Pythons are carnivores and eat many small animals. This includes langurs, chital, tortoises and hares. They will be eaten by larger carnivores like hyaenas, eagles and leopards."
     },
     {
       "colour": "Indigo",
       "name": "serpent-eagle",
       "level": 1,
-      "description": "Description to go here."
+      "description": "Crested Serpent Eagles are an apex predator and rarely get predated on by other species. They hunt many small animals such as pythons, mongooses, langurs, peafowl, chital, hare and even sometimes tortoises."
     },
     {
       "colour": "LawnGreen",
       "name": "vulture",
       "level": 1,
-      "description": "Description to go here."
+      "description": "Indian vultures are scavengers meaning they feed on dead things. Indian vultures rely on carrion to feed. They are also crucial to the food web as the vultures’ digestive system can process diseases and remove them from the food web. They act like a ‘dead-end’ for diseases."
     }, {
       "colour": "LightGreen",
       "name": "tree",
       "level": 5,
-      "description": "Description to go here."
+      "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, trees are producers and feed many primary consumers."
     }, {
       "colour": "LightCoral",
       "name": "flowering-plant",
       "level": 5,
-      "description": "Description to go here."
+      "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, flowers are producers and feed many primary consumers."
     }, {
       "colour": "LightSkyBlue",
       "name": "grasses",
       "level": 5,
-      "description": "Description to go here."
+      "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, grasses are producers and feed many primary consumers."
     }, {
       "colour": "Magenta",
       "name": "fruit",
       "level": 5,
-      "description": "Description to go here."
+      "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, trees are a producer and feed many primary consumers."
     }],
   "links": [
     {
