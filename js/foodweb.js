@@ -2,11 +2,9 @@
    height = 640,
    levelHeight = 130,
    topOffset = 70,
-   spacing = 100,
-   levelNames = ["predators", "third consumers", "second consumers", "first consumers", "producers"],
-   levels = [],
-   answerText = "Congratulations, you have won",
-   introText = "Welcome to the Food Web game";
+   spacing = 100;
+
+ var levels = [];
 
  var levelCounter = 0;
 
@@ -17,16 +15,6 @@
    levelCounter += 1;
 
  }
-
- // Add in level background div
-
- levels.forEach(function (element, index) {
-
-   var offset = levelHeight * index;
-
-   $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
-
- });
 
  var force = d3.layout.force()
    .size([width, height])
@@ -43,7 +31,24 @@
    node = svg.selectAll(".node");
 
  d3.json("data/data.json", function (error, graph) {
+
    if (error) throw error;
+
+   var settings = graph.settings;
+
+   var answerText = settings.completeText;
+   var introText = settings.introText;
+   var levelNames = settings.levelNames;
+
+   // Add in level background div
+
+   levels.forEach(function (element, index) {
+
+     var offset = levelHeight * index;
+
+     $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
+
+   });
 
    // Convert link animal names to index numbers
 

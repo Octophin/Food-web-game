@@ -1,4 +1,9 @@
 {
+  "settings": {
+    "introText": "Welcome to the foodweb game",
+    "completeText": "Congratulations!",
+    "levelNames": ["predators", "third consumers", "second consumers", "first consumers", "producers"]
+  },
   "species": [
     {
       "colour": "AliceBlue",
