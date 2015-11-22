@@ -1,7 +1,7 @@
  var width = 800,
    height = 620,
    levelHeight = 130,
-   topOffset = 50,
+   topOffset = 70,
    spacing = 100,
    levels = [];
 
@@ -14,6 +14,16 @@
    levelCounter += 1;
 
  }
+
+ // Add in level background div
+
+ levels.forEach(function (element, index) {
+   
+   var offset = levelHeight * index;
+   
+   $( "<div class='level' style='top:"+offset+"px; height:"+levelHeight+"px'></div>" ).appendTo("body");
+
+ });
 
  var force = d3.layout.force()
    .size([width, height])

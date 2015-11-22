@@ -3,6 +3,17 @@
   /*  overflow: hidden;*/
   font-family: sans-serif;
 }
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+#world {position: relative; z-index: 1;}
+.level {
+  display: block;
+  width: 100%;
+  position: fixed;
+}
 .link {
   stroke: #000;
   stroke-width: 1.5px;
@@ -17,8 +28,12 @@
   fill: #f00;
 }
 #answers {
+  height: 100%;
+  position: relative;
+  background-color: white;
+  z-index: 2;
   float: left;
-  width: 400px;
+  width: 350px;
 }
 #answers img {
   width: 65px;
@@ -56,4 +71,10 @@
   border-style: solid;
   color: black;
   padding: 10px;
+}
+.level:nth-child(odd) {
+  background: #cceff7;
+}
+.level:nth-child(even) {
+  background: #99dfef;
 }
