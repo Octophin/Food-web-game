@@ -22,7 +22,7 @@ body {
   height: 650px;
 }
 #world {
-  left: 280px;
+  left: 300px;
   position: absolute;
   z-index: 1;
 }
@@ -51,12 +51,12 @@ body {
   z-index: 2;
   position: absolute;
   left: 0px;
-  width: 280px;
+  width: 360px;
 }
 #answers {
   overflow: hidden;
   background-color: white;
-  height: 520px;
+  height: 420px;
 }
 #answers img {
   width: 50px;
@@ -104,8 +104,8 @@ body {
   font-size: 50%;
   height: 20px;
   position: absolute;
-  top: 40px;
-  left: 50px;
+  top: 15px;
+  left: 30px;
   text-align: center;
 }
 .answer button {
@@ -120,6 +120,7 @@ body {
   cursor: pointer;
 }
 #intro {
+  font-size:70%;
   padding: 10px;
   text-align: center;
 }
@@ -127,6 +128,7 @@ body {
   display: none;
   text-align: center;
   height: 520px;
+  font-size:80%;
 }
 #message .inner {
   padding: 10px;
