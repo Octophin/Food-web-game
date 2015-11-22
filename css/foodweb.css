@@ -67,6 +67,7 @@ body {
   display: block;
 }
 .level-name {
+  font-weight: normal;
   float: right;
   margin: 10px;
   font-size: 120%;
@@ -74,10 +75,31 @@ body {
   width: 100px;
 }
 .answer {
+  position: relative;
   height: 70px;
   width: 90px;
   display: inline-block;
   margin: 5px;
+}
+#answers .answer.done img {
+  cursor: default;
+}
+.answer.done:before {
+  content: '\2714';
+  color: white;
+  background-color: green;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 20px;
+  line-height: 20px;
+  font-size: 50%;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  text-align: center;
 }
 .answer button {
   display: block;

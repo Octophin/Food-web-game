@@ -3,7 +3,7 @@
    levelHeight = 130,
    topOffset = 70,
    spacing = 100,
-   levelNames = ["hello", "world", "this", "another", "what"],
+   levelNames = ["predators", "third consumers", "second consumers", "first consumers", "producers"],
    levels = [],
    answerText = "Congratulations, you have won",
    introText = "Welcome to the Food Web game";
@@ -191,7 +191,7 @@
 
          d3.select(this).style("fill", "url('#" + d.name + "')");
 
-         $("img#" + d.name).closest(".answer").css("visibility", "hidden");
+         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
          window.currentPoints += 1;
 
          if (window.currentPoints === window.totalPoints) {
