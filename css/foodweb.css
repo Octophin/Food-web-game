@@ -3,6 +3,9 @@
   /*  overflow: hidden;*/
   font-family: sans-serif;
 }
+html {
+  background-image:url("../background.jpg");
+}
 html,
 body {
   overflow: hidden;
@@ -15,7 +18,7 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-top:-320px;
+  margin-top: -320px;
   margin-left: -600px;
   width: 1200px;
 }
