@@ -191,7 +191,7 @@
 
          d3.select(this).style("fill", "url('#" + d.name + "')");
 
-         $("img#" + d.name).closest(".answer").hide();
+         $("img#" + d.name).closest(".answer").css("visibility", "hidden");
          window.currentPoints += 1;
 
          if (window.currentPoints === window.totalPoints) {
