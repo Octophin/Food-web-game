@@ -5,7 +5,7 @@
 }
 html,
 body {
-  font-size:16px;
+  font-size: 16px;
   margin: 0px;
   height: 100%;
 }
@@ -13,7 +13,7 @@ body {
   box-sizing: border-box;
   margin: 20px auto;
   position: relative;
-  width: 1161px;
+  width: 1200px;
 }
 #world {
   position: relative;
@@ -37,43 +37,57 @@ body {
 .node.fixed {
   fill: #f00;
 }
-#answers {
-  height: 100%;
+#panel {
+  min-height: 100%;
   position: relative;
   background-color: white;
   z-index: 2;
   float: left;
-  width: 350px;
+  width: 400px;
+}
+#answers {
+  background-color: white;
 }
 #answers img {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   overflow: hidden;
   cursor: move;
   margin: auto;
   display: block;
 }
+#logo {
+  width: 250px;
+  margin: auto;
+  padding: 20px;
+  height: auto;
+  display: block;
+}
 .level-name {
   float: right;
   margin: 10px;
-  font-size:120%;
+  font-size: 120%;
   text-align: right;
-  width:100px;
+  width: 100px;
 }
 .answer {
   height: 70px;
-  width: 65px;
-  float: left;
-  padding: 10px;
+  width: 90px;
+  display: inline-block;
+  margin: 5px;
 }
 .answer button {
   display: block;
   width: 100%;
-  font-size: 50%;
-  background-color: white;
-  color: black;
-  border-style: solid;
+  padding: 5px;
+  font-size: 60%;
+  background-color: #014f9e;
+  color: white;
+  border-style: none;
   cursor: pointer;
+}
+#intro {
+  text-align: center;
 }
 #message {
   display: none;
