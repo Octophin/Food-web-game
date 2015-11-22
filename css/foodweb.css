@@ -3,9 +3,6 @@
   /*  overflow: hidden;*/
   font-family: sans-serif;
 }
-html {
-  background-image: url("../background.jpg");
-}
 html,
 body {
   overflow: hidden;

@@ -1,263 +1,285 @@
- var width = 800,
-   height = 640,
-   levelHeight = 130,
-   topOffset = 70,
-   spacing = 80;
+// Get the world name from the query string
 
- var levels = [];
+var world = document.location.href.split("world=")[1];
 
- var levelCounter = 0;
+if (!world) {
 
- while (levelCounter < 5) {
+  $("body").html("No world selected");
 
-   levels.push(levelCounter * levelHeight + topOffset)
+  throw Error;
 
-   levelCounter += 1;
+}
 
- }
+var width = 800,
+  height = 640,
+  levelHeight = 130,
+  topOffset = 70,
+  spacing = 80;
 
- var force = d3.layout.force()
-   .size([width, height])
-   .charge(-400)
-   .linkDistance(200)
-   .on("tick", tick);
+var levels = [];
 
- var svg = d3.select("body").append("svg")
-   .attr("width", width)
-   .attr("height", height)
-   .attr("id", "world");
+var levelCounter = 0;
 
- var link = svg.selectAll(".link"),
-   node = svg.selectAll(".node");
+while (levelCounter < 5) {
 
- d3.json("data/data.json", function (error, graph) {
+  levels.push(levelCounter * levelHeight + topOffset)
 
-   if (error) throw error;
+  levelCounter += 1;
 
-   var settings = graph.settings;
+}
 
-   var answerText = settings.completeText;
-   var introText = settings.introText;
-   var levelNames = settings.levelNames;
+var force = d3.layout.force()
+  .size([width, height])
+  .charge(-400)
+  .linkDistance(200)
+  .on("tick", tick);
 
-   // Add in level background div
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .attr("id", "world");
 
-   levels.forEach(function (element, index) {
+var link = svg.selectAll(".link"),
+  node = svg.selectAll(".node");
 
-     var offset = levelHeight * index;
+d3.json(world + "/settings.json", function (error, graph) {
 
-     $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
+  // Set background
 
-   });
+  $('html').css({
+    'background-image': 'url(' + world + '/background.jpg)',
+  });
 
-   // Convert link animal names to index numbers
+  if (error) {
 
-   graph.links.forEach(function (link, index) {
+    $("body").html("That world doesn't exist");
 
-     graph.species.forEach(function (animal, animalIndex) {
+  }
 
-       if (link.source === animal.name) {
+  var settings = graph.settings;
 
-         graph.links[index].source = animalIndex;
+  var answerText = settings.completeText;
+  var introText = settings.introText;
+  var levelNames = settings.levelNames;
 
-       }
+  // Add in level background div
 
-       if (link.target === animal.name) {
+  levels.forEach(function (element, index) {
 
-         graph.links[index].target = animalIndex;
+    var offset = levelHeight * index;
 
-       }
+    $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
 
-     });
+  });
 
-   })
+  // Convert link animal names to index numbers
 
-   var defs = svg.append('svg:defs');
+  graph.links.forEach(function (link, index) {
 
-   // Create array for levels to see how many nodes there are in each level
+    graph.species.forEach(function (animal, animalIndex) {
 
-   window.totalPoints = graph.species.length;
-   window.currentPoints = 0;
+      if (link.source === animal.name) {
 
-   var levelNodes = {};
+        graph.links[index].source = animalIndex;
 
-   graph.species.forEach(function (node, index) {
+      }
 
-     defs.append("svg:pattern")
-       .attr("id", node.name)
-       .attr("width", 1)
-       .attr("height", 1)
-       .append("svg:image")
-       .attr("patternUnits", "userSpaceOnUse")
-       .attr("xlink:href", "images/" + node.name + ".png")
-       .attr("width", 70)
-       .attr("height", 70)
-       .attr("x", -5)
-       .attr("y", -5);
+      if (link.target === animal.name) {
 
-     // Add the animal to the answers section
+        graph.links[index].target = animalIndex;
 
-     $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name.replace("-", " ") + '</button></div>');
+      }
 
-     $("#answers").on("click", ".answer button", function (e) {
+    });
 
-       var animal = graph.species[$(e.target).attr("data-index")];
+  })
 
-       $("#answers").hide();
+  var defs = svg.append('svg:defs');
 
-       $("#message").show().find(".inner").text(animal.description);
-       
-       $("#info-title").text(animal.name.toUpperCase());
-       $("#info-image").attr("src", "images/" + animal.name + ".png");
+  // Create array for levels to see how many nodes there are in each level
 
-     });
+  window.totalPoints = graph.species.length;
+  window.currentPoints = 0;
 
-     // build the arrow.
-     svg.append("svg:defs").selectAll("marker")
-       .data([node.name])
-       .enter().append("svg:marker") // This section adds in the arrows
-       .attr("id", String)
-       .attr("viewBox", "0 -5 10 10")
-       .attr("refX", 30)
-       .style("fill", node.colour)
-       .attr("refY", 0)
-       .attr("markerWidth", 12)
-       .attr("markerHeight", 12)
-       .attr("orient", "auto")
-       .append("svg:path")
-       .attr("d", "M0,-5L10,0L0,5");
+  var levelNodes = {};
 
-     if (!levelNodes[node.level]) {
+  graph.species.forEach(function (node, index) {
 
-       levelNodes[node.level] = [];
+    defs.append("svg:pattern")
+      .attr("id", node.name)
+      .attr("width", 1)
+      .attr("height", 1)
+      .append("svg:image")
+      .attr("patternUnits", "userSpaceOnUse")
+      .attr("xlink:href", world + "/images/" + node.name + ".png")
+      .attr("width", 70)
+      .attr("height", 70)
+      .attr("x", -5)
+      .attr("y", -5);
 
-     }
+    // Add the animal to the answers section
 
-     levelNodes[node.level].push(node);
+    $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="' + world + '/images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name.replace("-", " ") + '</button></div>');
 
-   });
+    $("#answers").on("click", ".answer button", function (e) {
 
-   graph.species.forEach(function (node, number) {
+      var animal = graph.species[$(e.target).attr("data-index")];
 
-     node.y = levels[node.level - 1];
+      $("#answers").hide();
 
-     // Calculate centre offset
+      $("#message").show().find(".inner").text(animal.description);
 
-     var offset = width / 2 - ((levelNodes[node.level].length * spacing) / 2);
+      $("#info-title").text(animal.name.toUpperCase());
+      $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
 
-     levelNodes[node.level].forEach(function (item, index) {
+    });
 
-       if (item === node) {
+    // build the arrow.
+    svg.append("svg:defs").selectAll("marker")
+      .data([node.name])
+      .enter().append("svg:marker") // This section adds in the arrows
+      .attr("id", String)
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 30)
+      .style("fill", node.colour)
+      .attr("refY", 0)
+      .attr("markerWidth", 12)
+      .attr("markerHeight", 12)
+      .attr("orient", "auto")
+      .append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5");
 
-         node.x = index * spacing + offset;
+    if (!levelNodes[node.level]) {
 
-       }
+      levelNodes[node.level] = [];
 
-     })
+    }
 
-     node.fixed = true;
+    levelNodes[node.level].push(node);
 
-   })
+  });
 
-   force
-     .nodes(graph.species)
-     .links(graph.links)
-     .start();
+  graph.species.forEach(function (node, number) {
 
-   link = link.data(graph.links)
-     .enter().append("line")
-     .attr("class", "link")
-     .style("stroke", function (d) {
+    node.y = levels[node.level - 1];
 
-       return d.source.colour;
+    // Calculate centre offset
 
-     })
-     .attr("marker-end", function (d) {
+    var offset = width / 2 - ((levelNodes[node.level].length * spacing) / 2);
 
-       return "url(#" + d.source.name + ")";
+    levelNodes[node.level].forEach(function (item, index) {
 
-     })
+      if (item === node) {
 
-   node = node.data(graph.species)
-     .enter().append("circle")
-     .attr("id", function (d) {
+        node.x = index * spacing + offset;
 
-       return d.name;
+      }
 
-     })
-     .attr("r", 25)
-     .style("fill", function (d) {
+    })
 
-       return d.colour;
+    node.fixed = true;
 
-     })
-     .style("stroke", "black")
-     .attr("ondragover", "event.preventDefault()")
-     .on("drop", function (d) {
+  })
 
-       d3.event.preventDefault();
+  force
+    .nodes(graph.species)
+    .links(graph.links)
+    .start();
 
-       if (current === d.name) {
+  link = link.data(graph.links)
+    .enter().append("line")
+    .attr("class", "link")
+    .style("stroke", function (d) {
 
-         d3.select(this).style("fill", "url('#" + d.name + "')");
+      return d.source.colour;
 
-         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
-         window.currentPoints += 1;
+    })
+    .attr("marker-end", function (d) {
 
-         if (window.currentPoints === window.totalPoints) {
+      return "url(#" + d.source.name + ")";
 
-           $("#complete").text(answerText).show();
+    })
 
+  node = node.data(graph.species)
+    .enter().append("circle")
+    .attr("id", function (d) {
 
-         }
+      return d.name;
 
-       } else {
+    })
+    .attr("r", 25)
+    .style("fill", function (d) {
 
-         $("#answers").effect("shake", "left", 1000, 100);
+      return d.colour;
 
-       }
+    })
+    .style("stroke", "black")
+    .attr("ondragover", "event.preventDefault()")
+    .on("drop", function (d) {
 
-     })
+      d3.event.preventDefault();
 
-   // Add in intro text
+      if (current === d.name) {
 
-   $("#intro").html(introText);
+        d3.select(this).style("fill", "url('#" + d.name + "')");
 
-   $("#close-info").click(function () {
+        $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
+        window.currentPoints += 1;
 
-     $("#message").hide();
-     $("#answers").show();
+        if (window.currentPoints === window.totalPoints) {
 
-   })
+          $("#complete").text(answerText).show();
 
- });
 
- function tick() {
-   link.attr("x1", function (d) {
-       return d.source.x;
-     })
-     .attr("y1", function (d) {
-       return d.source.y;
-     })
-     .attr("x2", function (d) {
-       return d.target.x;
-     })
-     .attr("y2", function (d) {
-       return d.target.y;
-     });
+        }
 
-   node.attr("cx", function (d) {
-       return d.x;
-     })
-     .attr("cy", function (d) {
-       return d.y;
-     });
- }
+      } else {
 
- var current = null;
+        $("#answers").effect("shake", "left", 1000, 100);
 
- var drag = function (e) {
+      }
 
-   current = e.target.getAttribute("id");
+    })
 
- }
+  // Add in intro text
+
+  $("#intro").html(introText);
+
+  $("#close-info").click(function () {
+
+    $("#message").hide();
+    $("#answers").show();
+
+  })
+
+});
+
+function tick() {
+  link.attr("x1", function (d) {
+      return d.source.x;
+    })
+    .attr("y1", function (d) {
+      return d.source.y;
+    })
+    .attr("x2", function (d) {
+      return d.target.x;
+    })
+    .attr("y2", function (d) {
+      return d.target.y;
+    });
+
+  node.attr("cx", function (d) {
+      return d.x;
+    })
+    .attr("cy", function (d) {
+      return d.y;
+    });
+}
+
+var current = null;
+
+var drag = function (e) {
+
+  current = e.target.getAttribute("id");
+
+}
