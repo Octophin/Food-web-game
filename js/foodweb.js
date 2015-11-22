@@ -1,5 +1,5 @@
  var width = 800,
-   height = 620,
+   height = 640,
    levelHeight = 130,
    topOffset = 70,
    spacing = 100,
