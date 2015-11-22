@@ -12,12 +12,16 @@ body {
 }
 body {
   box-sizing: border-box;
-  margin: 20px auto;
-  position: relative;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top:-320px;
+  margin-left: -600px;
   width: 1200px;
 }
 #world {
-  position: relative;
+  left: 400px;
+  position: absolute;
   z-index: 1;
 }
 .level {
@@ -41,10 +45,10 @@ body {
 #panel {
   overflow: hidden;
   min-height: 100%;
-  position: relative;
   background-color: white;
   z-index: 2;
-  float: left;
+  position: absolute;
+  left: 0px;
   width: 400px;
 }
 #answers {
