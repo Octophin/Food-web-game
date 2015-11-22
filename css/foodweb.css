@@ -5,6 +5,7 @@
 }
 html,
 body {
+  overflow: hidden;
   font-size: 16px;
   margin: 0px;
   height: 100%;
@@ -38,6 +39,7 @@ body {
   fill: #f00;
 }
 #panel {
+  overflow: hidden;
   min-height: 100%;
   position: relative;
   background-color: white;
@@ -46,6 +48,7 @@ body {
   width: 400px;
 }
 #answers {
+  overflow: hidden;
   background-color: white;
 }
 #answers img {

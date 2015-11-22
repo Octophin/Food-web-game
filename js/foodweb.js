@@ -203,7 +203,7 @@
 
        } else {
 
-         //         $("body").effect("shake");
+         $("#answers").effect("shake", "left", 1000, 100);
 
        }
 
