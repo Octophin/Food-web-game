@@ -94,8 +94,6 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   })
 
-  var defs = svg.append('svg:defs');
-
   // Create array for levels to see how many nodes there are in each level
 
   window.totalPoints = graph.species.length;
@@ -103,10 +101,13 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   var levelNodes = {};
 
+
   graph.species.forEach(function (node, index) {
 
+    var defs = svg.append('svg:defs');
+
     defs.append("svg:pattern")
-      .attr("id", node.name)
+      .attr("id", node.name + "img")
       .attr("width", 1)
       .attr("height", 1)
       .append("svg:image")
@@ -115,7 +116,22 @@ d3.json(world + "/settings.json", function (error, graph) {
       .attr("width", 70)
       .attr("height", 70)
       .attr("x", -5)
-      .attr("y", -5);
+      .attr("y", -5)
+
+
+    defs.selectAll("marker")
+      .data([node.name])
+      .enter().append("svg:marker") // This section adds in the arrows
+      .attr("id", String)
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 30)
+      .style("fill", node.colour)
+      .attr("refY", 0)
+      .attr("markerWidth", 12)
+      .attr("markerHeight", 12)
+      .attr("orient", "auto")
+      .append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5")
 
     // Add the animal to the answers section
 
@@ -133,21 +149,6 @@ d3.json(world + "/settings.json", function (error, graph) {
       $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
 
     });
-
-    // build the arrow.
-    svg.append("svg:defs").selectAll("marker")
-      .data([node.name])
-      .enter().append("svg:marker") // This section adds in the arrows
-      .attr("id", String)
-      .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 30)
-      .style("fill", node.colour)
-      .attr("refY", 0)
-      .attr("markerWidth", 12)
-      .attr("markerHeight", 12)
-      .attr("orient", "auto")
-      .append("svg:path")
-      .attr("d", "M0,-5L10,0L0,5");
 
     if (!levelNodes[node.level]) {
 
@@ -221,7 +222,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       if (current === d.name) {
 
-        d3.select(this).style("fill", "url('#" + d.name + "')");
+        d3.select(this).style("fill", "url('#" + d.name + "img')");
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
         window.currentPoints += 1;
