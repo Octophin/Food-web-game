@@ -59,7 +59,6 @@ body {
   width: 50px;
   height: 50px;
   overflow: hidden;
-  cursor: move;
   margin: auto;
   display: block;
 }
@@ -84,6 +83,7 @@ body {
   width: 60px;
   display: inline-block;
   margin: 5px;
+  cursor: pointer;
 }
 #answers .answer.done img {
   cursor: default;
@@ -146,6 +146,7 @@ body {
   color: #014f9e;
 }
 #info-image {
+  cursor: move;
   width: 100px;
   display: block;
   height: auto;

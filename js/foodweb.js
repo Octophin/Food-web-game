@@ -46,6 +46,8 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   // Set background
 
+  window.graph = graph;
+
   $('html').css({
     'background-image': 'url(' + world + '/background.jpg)',
   });
@@ -135,11 +137,13 @@ d3.json(world + "/settings.json", function (error, graph) {
 
     // Add the animal to the answers section
 
-    $("#answers").append('<div class="answer"><img ondragstart="drag(event)" draggable="true" src="' + world + '/images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name.replace("-", " ") + '</button></div>');
+    $("#answers").append('<div class="answer" data-index="' + index + '"><img draggable="false" data-index="' + index + '" src="' + world + '/images/' + node.name + '.png" id="' + node.name + '" /><button class="info" data-index="' + index + '">' + node.name.replace("-", " ") + '</button></div>');
 
-    $("#answers").on("click", ".answer button", function (e) {
+    $("#answers").on("click", ".answer", function (e) {
 
       var animal = graph.species[$(e.target).attr("data-index")];
+
+      current = animal.name;
 
       $("#answers").hide();
 
@@ -227,6 +231,9 @@ d3.json(world + "/settings.json", function (error, graph) {
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
         window.currentPoints += 1;
 
+        $("#message").hide();
+        $("#answers").show();
+
         if (window.currentPoints === window.totalPoints) {
 
           $("#complete").text(answerText).show();
@@ -236,7 +243,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       } else {
 
-        $("#answers").effect("shake", "left", 1000, 100);
+        $("#info-image").effect("shake", "left", 1000, 100);
 
       }
 
@@ -281,6 +288,6 @@ var current = null;
 
 var drag = function (e) {
 
-  current = e.target.getAttribute("id");
+
 
 }
