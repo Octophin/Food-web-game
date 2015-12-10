@@ -236,8 +236,9 @@ d3.json(world + "/settings.json", function (error, graph) {
 
         if (window.currentPoints === window.totalPoints) {
 
-          $("#complete").text(answerText).show();
-
+          $.blockUI({
+            message: '<p>' + answerText + '</p>'
+          });
 
         }
 
