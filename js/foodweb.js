@@ -236,8 +236,14 @@ d3.json(world + "/settings.json", function (error, graph) {
 
         if (window.currentPoints === window.totalPoints) {
 
+          // Stop timer
+
+          window.clearInterval(window.timer);
+          
+          // Show complete message
+
           $.blockUI({
-            message: '<p>' + answerText + '</p>'
+            message: '<p>' + answerText + '</p><p>You did it in ' + window.timerCounter + ' seconds.</p>'
           });
 
         }
@@ -259,6 +265,16 @@ d3.json(world + "/settings.json", function (error, graph) {
   // Unblock buttons
 
   $("body").on("click", ".unblock", function () {
+
+    // Start timer!
+
+    window.timerCounter = 0;
+
+    window.timer = window.setInterval(function () {
+
+      window.timerCounter += 1;
+
+    }, 1000);
 
     $.unblockUI();
 
