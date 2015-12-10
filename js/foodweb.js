@@ -126,11 +126,11 @@ d3.json(world + "/settings.json", function (error, graph) {
       .enter().append("svg:marker") // This section adds in the arrows
       .attr("id", String)
       .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 30)
+      .attr("refX", 45)
       .style("fill", node.colour)
       .attr("refY", 0)
-      .attr("markerWidth", 12)
-      .attr("markerHeight", 12)
+      .attr("markerWidth", 8)
+      .attr("markerHeight",8)
       .attr("orient", "auto")
       .append("svg:path")
       .attr("d", "M0,-5L10,0L0,5")
@@ -291,16 +291,16 @@ d3.json(world + "/settings.json", function (error, graph) {
 
 function tick() {
   link.attr("x1", function (d) {
-      return d.source.x;
-    })
-    .attr("y1", function (d) {
-      return d.source.y;
-    })
-    .attr("x2", function (d) {
       return d.target.x;
     })
-    .attr("y2", function (d) {
+    .attr("y1", function (d) {
       return d.target.y;
+    })
+    .attr("x2", function (d) {
+      return d.source.x;
+    })
+    .attr("y2", function (d) {
+      return d.source.y;
     });
 
   node.attr("cx", function (d) {
