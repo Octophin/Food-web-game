@@ -249,9 +249,19 @@ d3.json(world + "/settings.json", function (error, graph) {
 
     })
 
-  // Add in intro text
+  // Intro message
 
-  $("#intro").html(introText);
+  $.blockUI({
+    message: '<h1>Welcome</h1><p>' + introText + '</p><button class="unblock">Start</button>'
+  });
+
+  // Unblock buttons
+
+  $("body").on("click", ".unblock", function () {
+
+    $.unblockUI();
+
+  });
 
   $("#close-info").click(function () {
 

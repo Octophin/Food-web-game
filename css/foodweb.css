@@ -1,7 +1,7 @@
 * {
   max-width: 100%;
   /*  overflow: hidden;*/
-  font-family: sans-serif;
+  font-family: "calibri", sans-serif;
 }
 html,
 body {
@@ -53,11 +53,11 @@ body {
 #answers {
   overflow: hidden;
   background-color: white;
-  height: 420px;
+  height: 560px;
 }
 #answers img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   margin: auto;
   display: block;
@@ -79,8 +79,8 @@ body {
 }
 .answer {
   position: relative;
-  height: 70px;
-  width: 60px;
+  height: 85px;
+  width: 80px;
   display: inline-block;
   margin: 5px;
   cursor: pointer;
@@ -106,18 +106,19 @@ body {
   text-align: center;
 }
 .answer button {
+  font-family: inherit;
   display: block;
   outline: none;
   width: 100%;
   padding: 5px;
-  font-size: 60%;
+  font-size: 70%;
   background-color: transparent;
   color: #014f9e;
   border-style: none;
   cursor: pointer;
 }
 #intro {
-  font-size:70%;
+  font-size: 70%;
   padding: 10px;
   text-align: center;
 }
@@ -125,7 +126,7 @@ body {
   display: none;
   text-align: center;
   height: 520px;
-  font-size:80%;
+  font-size: 80%;
 }
 #message .inner {
   padding: 10px;
@@ -138,7 +139,7 @@ body {
   outline: none;
   cursor: pointer;
   margin: 10px auto;
-  width:50px;
+  width: 50px;
   display: block;
 }
 #info-title {
@@ -152,12 +153,27 @@ body {
   height: auto;
   margin: auto;
   border-radius: 200px;
-  border-style:solid;
-  border-color:#014f9e;
+  border-style: solid;
+  border-color: #014f9e;
 }
 .level:nth-child(odd) {
   background: #cceff7;
 }
 .level:nth-child(even) {
   background: #99dfef;
+}
+.blockUI {
+  cursor: inherit !important;
+}
+.blockMsg {
+  padding: 10px !important;
+  top: 10% !important;
+}
+button.unblock {
+  color: white;
+  background-color: #014f9e;
+  border-style: none;
+  font-family: inherit;
+  font-size:100%;
+  cursor: pointer;
 }
