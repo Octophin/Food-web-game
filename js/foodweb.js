@@ -127,7 +127,11 @@ d3.json(world + "/settings.json", function (error, graph) {
       .attr("id", String)
       .attr("viewBox", "0 -5 10 10")
       .attr("refX", 45)
-      .style("fill", node.colour)
+      .style("fill", function (d) {
+
+        return node.colour;
+
+      })
       .attr("refY", 0)
       .attr("markerWidth", 8)
       .attr("markerHeight", 8)
@@ -152,7 +156,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       $("#info-title").text(animal.name.toUpperCase());
       $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
       $("#info-image-drag").attr("src", world + "/images/" + animal.name + ".png");
-      
+
 
     });
 
@@ -203,7 +207,7 @@ d3.json(world + "/settings.json", function (error, graph) {
     })
     .attr("marker-end", function (d) {
 
-      return "url(#" + d.source.name + ")";
+      return "url(#" + d.target.name + ")";
 
     })
 
@@ -236,6 +240,10 @@ d3.json(world + "/settings.json", function (error, graph) {
 
         return d.highlight;
 
+      } else if (d.done) {
+
+        return d.colour;
+
       } else {
 
         return "black";
@@ -247,11 +255,11 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       if (d.highlight) {
 
-        return 4;
+        return 6;
 
       } else {
 
-        return 2;
+        return 3;
 
       }
 
@@ -264,6 +272,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       if (current === d.name) {
 
         d3.select(this).style("fill", "url('#" + d.name + "img')");
+        d3.select(this).style("stroke", d.colour);
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
 
