@@ -151,6 +151,8 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       $("#info-title").text(animal.name.toUpperCase());
       $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
+      $("#info-image-drag").attr("src", world + "/images/" + animal.name + ".png");
+      
 
     });
 
