@@ -19,7 +19,7 @@ body {
   height: 650px;
 }
 #world {
-  left: 300px;
+  left: 420px;
   position: absolute;
   z-index: 1;
 }
@@ -48,7 +48,7 @@ body {
   z-index: 2;
   position: absolute;
   left: 0px;
-  width: 360px;
+  width: 425px;
 }
 #answers {
   overflow: hidden;
@@ -80,7 +80,7 @@ body {
 .answer {
   position: relative;
   height: 85px;
-  width: 80px;
+  width: 95px;
   display: inline-block;
   margin: 5px;
   cursor: pointer;
@@ -111,16 +111,11 @@ body {
   outline: none;
   width: 100%;
   padding: 0px;
-  font-size: 100%;
+  font-size: 80%;
   background-color: transparent;
   color: #014f9e;
   border-style: none;
   cursor: pointer;
-}
-#intro {
-  font-size: 70%;
-  padding: 10px;
-  text-align: center;
 }
 #message {
   display: none;

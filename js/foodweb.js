@@ -10,11 +10,11 @@ if (!world) {
 
 }
 
-var width = 800,
+var width = 600,
   height = 640,
   levelHeight = 130,
   topOffset = 70,
-  spacing = 80;
+  spacing = 70;
 
 var levels = [];
 
