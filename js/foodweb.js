@@ -14,7 +14,7 @@ var width = 600,
   height = 640,
   levelHeight = 130,
   topOffset = 70,
-  spacing = 75;
+  spacing = 70;
 
 var levels = [];
 
@@ -73,6 +73,8 @@ d3.json(world + "/settings.json", function (error, graph) {
     $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
 
   });
+
+  $("#help").html(settings.helpTextList);
 
   // Convert link animal names to index numbers
 
@@ -152,6 +154,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       $("#answers").hide();
 
       $("#message").show().find(".inner").text(animal.description);
+      $("#help").html(settings.helpTextSelected);
 
       $("#info-title").text(animal.name.toUpperCase());
       $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
@@ -272,14 +275,15 @@ d3.json(world + "/settings.json", function (error, graph) {
       if (current === d.name) {
 
         d3.select(this).style("fill", "url('#" + d.name + "img')");
-        
-        
+
+
         d3.select(this).style("stroke", d.highlight || d.colour);
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
 
         $("#message").hide();
         $("#answers").show();
+        $("#help").html(settings.helpTextList);
 
         if (window.currentPoints === window.totalPoints) {
 
@@ -329,6 +333,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   $("#close-info").click(function () {
 
+    $("#help").html(settings.helpTextList);
     $("#message").hide();
     $("#answers").show();
 

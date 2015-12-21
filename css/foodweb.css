@@ -53,7 +53,7 @@ body {
 #answers {
   overflow: hidden;
   background-color: white;
-  height: 560px;
+  height: 505px;
 }
 #answers img {
   width: 60px;
@@ -77,10 +77,17 @@ body {
   text-align: right;
   width: 100px;
 }
+#help {
+  width: 100%;
+  color: white;
+  background-color: red;
+  padding: 10px;
+  margin-bottom: 5px;
+}
 .answer {
   position: relative;
-  height: 85px;
-  width: 95px;
+  height: 90px;
+  width: 75px;
   display: inline-block;
   margin: 5px;
   cursor: pointer;
@@ -120,7 +127,7 @@ body {
 #message {
   display: none;
   text-align: left;
-  height: 544px;
+  height: 510px;
   font-size: 100%;
 }
 #message .inner {
@@ -130,7 +137,7 @@ body {
   background-color: #014f9e;
   color: white;
   padding: 5px;
-  font-size:100%;
+  font-size: 100%;
   border-style: none;
   outline: none;
   cursor: pointer;
@@ -170,6 +177,6 @@ button.unblock {
   background-color: #014f9e;
   border-style: none;
   font-family: inherit;
-  font-size:100%;
+  font-size: 100%;
   cursor: pointer;
 }
