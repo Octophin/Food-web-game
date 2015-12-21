@@ -14,7 +14,7 @@ var width = 600,
   height = 640,
   levelHeight = 130,
   topOffset = 70,
-  spacing = 70;
+  spacing = 75;
 
 var levels = [];
 
@@ -272,7 +272,9 @@ d3.json(world + "/settings.json", function (error, graph) {
       if (current === d.name) {
 
         d3.select(this).style("fill", "url('#" + d.name + "img')");
-        d3.select(this).style("stroke", d.colour);
+        
+        
+        d3.select(this).style("stroke", d.highlight || d.colour);
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
 
