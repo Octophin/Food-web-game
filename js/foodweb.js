@@ -215,7 +215,17 @@ d3.json(world + "/settings.json", function (error, graph) {
     .attr("r", 25)
     .style("fill", function (d) {
 
-      return d.colour;
+      // Check if species should already be on food web
+
+      if (d.done) {
+
+        $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
+
+        return "url('#" + d.name + "img')";
+
+      } else {
+        return d.colour;
+      }
 
     })
     .style("stroke", function (d) {
@@ -225,9 +235,9 @@ d3.json(world + "/settings.json", function (error, graph) {
         return d.highlight;
 
       } else {
-        
+
         return "black";
-        
+
       }
 
     })
@@ -254,7 +264,6 @@ d3.json(world + "/settings.json", function (error, graph) {
         d3.select(this).style("fill", "url('#" + d.name + "img')");
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
-        window.currentPoints += 1;
 
         $("#message").hide();
         $("#answers").show();

@@ -129,21 +129,25 @@
       "colour": "LightGreen",
       "name": "tree",
       "level": 5,
+      "done": true,
       "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, trees are producers and feed many primary consumers."
     }, {
       "colour": "LightCoral",
       "name": "flowering-plant",
       "level": 5,
+      "done": true,
       "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, flowers are producers and feed many primary consumers."
     }, {
       "colour": "LightSkyBlue",
       "name": "grasses",
       "level": 5,
+      "done": true,
       "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, grasses are producers and feed many primary consumers."
     }, {
       "colour": "Magenta",
       "name": "fruit",
       "level": 5,
+      "done": true,
       "description": "By absorbing energy from the sun, carbon dioxide from the air and water and nutrients from the soil, trees are a producer and feed many primary consumers."
     }],
   "links": [
