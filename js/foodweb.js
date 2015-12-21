@@ -130,7 +130,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       .style("fill", node.colour)
       .attr("refY", 0)
       .attr("markerWidth", 8)
-      .attr("markerHeight",8)
+      .attr("markerHeight", 8)
       .attr("orient", "auto")
       .append("svg:path")
       .attr("d", "M0,-5L10,0L0,5")
@@ -218,7 +218,32 @@ d3.json(world + "/settings.json", function (error, graph) {
       return d.colour;
 
     })
-    .style("stroke", "black")
+    .style("stroke", function (d) {
+
+      if (d.highlight) {
+
+        return d.highlight;
+
+      } else {
+        
+        return "black";
+        
+      }
+
+    })
+    .style('stroke-width', function (d) {
+
+      if (d.highlight) {
+
+        return 4;
+
+      } else {
+
+        return 2;
+
+      }
+
+    })
     .attr("ondragover", "event.preventDefault()")
     .on("drop", function (d) {
 
@@ -239,7 +264,7 @@ d3.json(world + "/settings.json", function (error, graph) {
           // Stop timer
 
           window.clearInterval(window.timer);
-          
+
           // Show complete message
 
           $.blockUI({
