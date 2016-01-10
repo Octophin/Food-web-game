@@ -44,6 +44,42 @@ var link = svg.selectAll(".link"),
 
 d3.json(world + "/settings.json", function (error, graph) {
 
+  var showHelpText = function () {
+
+    if (!graph.settings.stepMode) {
+      $("#help").html(settings.helpTextList);
+    } else {
+
+      // Grey out all uncompleted levels
+
+      $("[data-level]").not("[data-done]").css("opacity", 0.2);
+
+      var currentLevel;
+      var counter = 1;
+      while (!currentLevel) {
+
+        var toDo = $("[data-level=" + counter + "]").not("[data-done]")
+
+        if ($(toDo).length) {
+
+          currentLevel = counter;
+
+        }
+
+        counter += 1;
+
+      }
+
+      // Ungrey the current level
+
+      $("[data-level=" + currentLevel + "]").css("opacity", 1);
+
+      $("#help").html(graph.settings.levelNames[currentLevel - 1].help);
+
+    }
+
+  };
+
   if (error) {
 
     console.log(error);
@@ -79,8 +115,6 @@ d3.json(world + "/settings.json", function (error, graph) {
     $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index].name + "</h2></div>").appendTo("body");
 
   });
-
-  $("#help").html(settings.helpTextList);
 
   // Convert link animal names to index numbers
 
@@ -243,11 +277,22 @@ d3.json(world + "/settings.json", function (error, graph) {
 
     })
     .attr("r", 25)
+    .attr("data-done", function (d) {
+
+      if (d.done) {
+
+        return "true";
+
+      }
+
+    })
     .style("fill", function (d) {
 
       // Check if species should already be on food web
 
       if (d.done) {
+        
+        window.totalPoints -= 1;
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
 
@@ -295,6 +340,8 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       if (current === d.name) {
 
+        d3.select(this).attr("data-done", "true");
+
         d3.select(this).style("fill", "url('#" + d.name + "img')");
 
 
@@ -304,8 +351,9 @@ d3.json(world + "/settings.json", function (error, graph) {
 
         $("#message").hide();
         $("#answers").show();
-        $("#help").html(settings.helpTextList);
 
+        window.currentPoints += 1;
+        
         if (window.currentPoints === window.totalPoints) {
 
           // Stop timer
@@ -317,6 +365,10 @@ d3.json(world + "/settings.json", function (error, graph) {
           $.blockUI({
             message: '<p>' + answerText + '</p><p>You did it in ' + window.timerCounter + ' seconds.</p>'
           });
+
+        } else {
+
+          showHelpText();
 
         }
 
@@ -354,11 +406,13 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   $("#close-info").click(function () {
 
-    $("#help").html(settings.helpTextList);
+    showHelpText();
     $("#message").hide();
     $("#answers").show();
 
   })
+
+  showHelpText();
 
 });
 
