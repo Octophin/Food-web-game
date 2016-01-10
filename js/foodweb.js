@@ -44,6 +44,12 @@ var link = svg.selectAll(".link"),
 
 d3.json(world + "/settings.json", function (error, graph) {
 
+  if (error) {
+
+    console.log(error);
+
+  }
+
   // Set background
 
   window.graph = graph;
@@ -70,7 +76,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
     var offset = levelHeight * index;
 
-    $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index] + "</h2></div>").appendTo("body");
+    $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index].name + "</h2></div>").appendTo("body");
 
   });
 

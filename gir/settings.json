@@ -4,7 +4,23 @@
     "completeText": "Congratulations! You have successfully completed the Gir Forest food web and can now see how complex the ecosystem is. Everything is dependent on each other for survival.",
     "helpTextList": "Select a species to see where it should go on the web",
     "helpTextSelected": "Drag the animal into the right slot on the food web",
-    "levelNames": ["predators", "third consumers", "second consumers", "first consumers", "producers"]
+    "levelNames": [{
+        "name": "predators",
+        "help": "Put all the predators on the web"
+    }, {
+        "name": "third consumers",
+        "help": "Put all the third consumers on the web"
+    }, {
+        "name": "second consumers",
+        "help": "Put all the second consumers on the web"
+    }, {
+        "name": "first consumers",
+        "help": "Put all the first consumers on the web"
+    }, {
+        "name": "producers",
+        "help": "Put all the producers on the web"
+    }
+                  ]
   },
   "species": [
     {
