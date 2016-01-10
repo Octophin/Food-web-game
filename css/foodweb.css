@@ -49,6 +49,8 @@ body {
   position: absolute;
   left: 0px;
   width: 425px;
+  border-style: solid;
+  border-width: 0 4px 0 0;
 }
 #answers {
   overflow: hidden;
@@ -160,10 +162,10 @@ body {
   border-color: #014f9e;
 }
 .level:nth-child(odd) {
-  background: #cceff7;
+  background: white;
 }
 .level:nth-child(even) {
-  background: #99dfef;
+  background: lightgrey;
 }
 .blockUI {
   cursor: inherit !important;
