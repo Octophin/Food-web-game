@@ -154,198 +154,260 @@
     }],
   "links": [
     {
-      "source": "peafowl",
-      "target": "tree"
-    },
-    {
-      "source": "hanuman-langur",
-      "target": "tree"
-    },
-    {
-      "source": "porcupine",
-      "target": "tree"
-    }, {
-      "source": "cockroach",
-      "target": "tree"
-    },
-    {
-      "source": "indian-hare",
-      "target": "flowering-plant"
-    },
-    {
       "source": "indian-star-tortoise",
-      "target": "flowering-plant"
+      "target": "fruit"
+    },
+    {
+      "source": "ants",
+      "target": "fruit"
+    },
+    {
+      "source": "cockroach",
+      "target": "fruit"
     },
     {
       "source": "nilgai",
+      "target": "fruit"
+    },
+    {
+      "source": "chital",
+      "target": "fruit"
+    },
+    {
+      "source": "peafowl",
+      "target": "fruit"
+    },
+    {
+      "source": "porcupine",
+      "target": "fruit"
+    },
+    {
+      "source": "chital",
+      "target": "grasses"
+    },
+    {
+      "source": "hanuman-langur",
+      "target": "grasses"
+    },
+    {
+      "source": "nilgai",
+      "target": "grasses"
+      },
+    {
+      "source": "indian-star-tortoise",
+      "target": "grasses"
+      },
+    {
+      "source": "indian-hare",
+      "target": "grasses"
+      },
+    {
+      "source": "cockroach",
+      "target": "grasses"
+      },
+    {
+      "source": "hanuman-langur",
+      "target": "tree"
+      },
+    {
+      "source": "peafowl",
+      "target": "tree"
+      },
+    {
+      "source": "hanuman-langur",
+      "target": "tree"
+      },
+    {
+      "source": "porcupine",
+      "target": "tree"
+      },
+    {
+      "source": "cockroach",
+      "target": "tree"
+      },
+    {
+      "source": "indian-hare",
       "target": "flowering-plant"
-    }, {
+      },
+    {
+      "source": "indian-star-tortoise",
+      "target": "flowering-plant"
+      },
+    {
+      "source": "nilgai",
+      "target": "flowering-plant"
+      },
+    {
       "source": "chital",
       "target": "flowering-plant"
-    },
+      },
     {
       "source": "peafowl",
       "target": "cockroach"
-    }, {
+      },
+    {
       "source": "grey-mongoose",
       "target": "cockroach"
-    },
+      },
     {
       "source": "peafowl",
       "target": "ants"
-    }, {
+      },
+    {
       "source": "hanuman-langur",
       "target": "ants"
-    },
+      },
     {
       "source": "pangolin",
       "target": "ants"
-    },
+      },
     {
       "source": "feral-dog",
       "target": "indian-hare"
-    },
+      },
     {
       "source": "hyaena",
       "target": "indian-hare"
-    },
+      },
     {
       "source": "serpent-eagle",
       "target": "indian-hare"
-    },
+      },
     {
       "source": "leopard",
       "target": "indian-hare"
-    },
+      },
     {
       "source": "golden-jackal",
       "target": "chital"
-    },
+      },
     {
       "source": "asiatic-lion",
       "target": "chital"
-    }, {
+      },
+    {
       "source": "leopard",
       "target": "chital"
-    },
+      },
     {
       "source": "rock-python",
       "target": "chital"
-    },
+      },
     {
       "source": "hyaena",
       "target": "porcupine"
-    },
+      },
     {
       "source": "hyaena",
       "target": "nilgai"
-    },
+      },
     {
       "source": "asiatic-lion",
       "target": "nilgai"
-    },
+      },
     {
       "source": "leopard",
       "target": "nilgai"
-    },
+      },
     {
       "source": "feral-dog",
       "target": "peafowl"
-    }, {
+      },
+    {
       "source": "serpent-eagle",
       "target": "peafowl"
-    },
+      },
     {
       "source": "golden-jackal",
       "target": "peafowl"
-    },
+      },
     {
       "source": "leopard",
       "target": "peafowl"
-    },
+      },
     {
       "source": "leopard",
       "target": "hanuman-langur"
-    },
+      },
     {
       "source": "serpent-eagle",
       "target": "hanuman-langur"
-    },
+      },
     {
       "source": "rock-python",
       "target": "hanuman-langur"
-    },
+      },
     {
       "source": "asiatic-lion",
       "target": "pangolin"
-    },
+      },
     {
       "source": "leopard",
       "target": "pangolin"
-    },
+      },
     {
       "source": "vulture",
       "target": "carrion"
-    },
+      },
     {
       "source": "hyaena",
       "target": "carrion"
-    },
+      },
     {
       "source": "feral-dog",
       "target": "carrion"
-    },
+      },
     {
       "source": "cockroach",
       "target": "carrion"
-    },
+      },
     {
       "source": "asiatic-lion",
       "target": "feral-dog"
-    },
+      },
     {
       "source": "leopard",
       "target": "feral-dog"
-    },
+      },
     {
       "source": "hyaena",
       "target": "golden-jackal"
-    },
+      },
     {
       "source": "rock-python",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "leopard",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "serpent-eagle",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "hyaena",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "golden-jackal",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "feral-dog",
       "target": "grey-mongoose"
-    },
+      },
     {
       "source": "serpent-eagle",
       "target": "rock-python"
-    },
+      },
     {
       "source": "hyaena",
       "target": "rock-python"
-    },
+      },
     {
       "source": "leopard",
       "target": "rock-python"
-    }
-  ]
+      }
+      ]
 }
