@@ -55,7 +55,13 @@ d3.json(world + "/settings.json", function (error, graph) {
       $("[data-level]").not("[data-done]").css("opacity", 0.2).attr("data-blocked", "true");
 
       var currentLevel;
-      var counter = 1;
+
+      if (graph.settings.stepModeDirection === "up") {
+        var counter = graph.settings.levelNames.length;
+      } else {
+        var counter = 0;
+      }
+
       while (!currentLevel) {
 
         var toDo = $("[data-level=" + counter + "]").not("[data-done]")
@@ -66,7 +72,11 @@ d3.json(world + "/settings.json", function (error, graph) {
 
         }
 
-        counter += 1;
+        if (graph.settings.stepModeDirection === "up") {
+          counter -= 1;
+        } else {
+          counter += 1
+        }
 
       }
 

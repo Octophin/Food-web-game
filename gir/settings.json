@@ -1,6 +1,7 @@
 {
   "settings": {
     "stepMode": true,
+    "stepModeDirection": "down",
     "introText": "<p>The aim of this game is to drag and drop the animals of the Gir Forest into the correct place in the food web. By clicking on the animals, you will get some extra information to help you work out who eats who. The arrows show what is eaten by each animal so follow these to make sure the animals are in the right place. Good luck!</p><p><b>Top Tip: </b>Start from the bottom and work your way up the food web. It’s easier this way!</p>",
     "completeText": "Congratulations! You have successfully completed the Gir Forest food web and can now see how complex the ecosystem is. Everything is dependent on each other for survival.",
     "helpTextList": "Select a species to see where it should go on the web",
