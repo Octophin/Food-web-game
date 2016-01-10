@@ -98,6 +98,16 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   })
 
+  graph.links.forEach(function (link) {
+
+    if (typeof link.target !== "number" || typeof link.source !== "number") {
+      
+      console.error("bad link", link);
+
+    }
+
+  })
+
   // Create array for levels to see how many nodes there are in each level
 
   window.totalPoints = graph.species.length;
