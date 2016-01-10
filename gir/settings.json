@@ -154,6 +154,34 @@
     }],
   "links": [
     {
+      "source": "golden-jackal",
+      "target": "grey-mongoose"
+    },
+    {
+      "source": "serpent-eagle",
+      "target": "indian-star-tortoise"
+    },
+    {
+      "source": "rock-python",
+      "target": "indian-star-tortoise"
+    },
+    {
+      "source": "peafowl",
+      "target": "indian-star-tortoise"
+    },
+    {
+      "source": "rock-python",
+      "target": "indian-hare"
+    },
+    {
+      "source": "grey-mongoose",
+      "target": "indian-hare"
+    },
+    {
+      "source": "golden-jackal",
+      "target": "indian-hare"
+    },
+    {
       "source": "indian-star-tortoise",
       "target": "fruit"
     },
