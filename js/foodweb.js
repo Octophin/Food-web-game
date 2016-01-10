@@ -231,6 +231,11 @@ d3.json(world + "/settings.json", function (error, graph) {
       return d.name;
 
     })
+    .attr("data-level", function (d) {
+
+      return d.level;
+
+    })
     .attr("r", 25)
     .style("fill", function (d) {
 
