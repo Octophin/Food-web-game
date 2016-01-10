@@ -101,7 +101,7 @@ d3.json(world + "/settings.json", function (error, graph) {
   graph.links.forEach(function (link) {
 
     if (typeof link.target !== "number" || typeof link.source !== "number") {
-      
+
       console.error("bad link", link);
 
     }
@@ -220,7 +220,7 @@ d3.json(world + "/settings.json", function (error, graph) {
     })
     .attr("marker-end", function (d) {
 
-      return "url(#" + d.target.name + ")";
+      return "url(#" + d.source.name + ")";
 
     })
 
