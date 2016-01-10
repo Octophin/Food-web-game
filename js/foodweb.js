@@ -52,7 +52,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       // Grey out all uncompleted levels
 
-      $("[data-level]").not("[data-done]").css("opacity", 0.2);
+      $("[data-level]").not("[data-done]").css("opacity", 0.2).attr("data-blocked", "true");
 
       var currentLevel;
       var counter = 1;
@@ -72,7 +72,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       // Ungrey the current level
 
-      $("[data-level=" + currentLevel + "]").css("opacity", 1);
+      $("[data-level=" + currentLevel + "]").css("opacity", 1).attr("data-blocked", "false");
 
       $("#help").html(graph.settings.levelNames[currentLevel - 1].help);
 
@@ -291,7 +291,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       // Check if species should already be on food web
 
       if (d.done) {
-        
+
         window.totalPoints -= 1;
 
         $("img#" + d.name).attr("draggable", "false").closest(".answer").addClass("done");
@@ -336,6 +336,12 @@ d3.json(world + "/settings.json", function (error, graph) {
     .attr("ondragover", "event.preventDefault()")
     .on("drop", function (d) {
 
+      if (d3.select(this).attr("data-blocked") === "true") {
+
+        return false;
+
+      }
+
       d3.event.preventDefault();
 
       if (current === d.name) {
@@ -353,7 +359,7 @@ d3.json(world + "/settings.json", function (error, graph) {
         $("#answers").show();
 
         window.currentPoints += 1;
-        
+
         if (window.currentPoints === window.totalPoints) {
 
           // Stop timer
