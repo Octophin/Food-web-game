@@ -468,6 +468,21 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   showHelpText();
 
+  // Load in additional JS file if specified
+
+  if (graph.settings.extraScript) {
+
+    (function () {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = world + "/" + graph.settings.extraScript;
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    })();
+
+  }
+
 });
 
 function tick() {
