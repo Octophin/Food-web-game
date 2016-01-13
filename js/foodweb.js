@@ -190,7 +190,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
   graph.species.forEach(function (node, index) {
 
-    var defs = svg.append('svg:defs');
+    window.defs = svg.append('svg:defs');
 
     defs.append("svg:pattern")
       .attr("id", node.name + "img")

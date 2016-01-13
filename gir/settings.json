@@ -1,5 +1,6 @@
 {
   "settings": {
+    "extraScript": "vulture.js",
     "stepMode": true,
     "stepModeDirection": "up",
     "introText": "<p>The aim of this game is to drag and drop the animals of the Gir Forest into the correct place in the food web. By clicking on the animals, you will get some extra information to help you work out who eats who. The arrows show what is eaten by each animal so follow these to make sure the animals are in the right place. Good luck!</p><p><b>Top Tip: </b>Start from the bottom and work your way up the food web. It’s easier this way!</p>",
