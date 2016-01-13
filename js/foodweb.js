@@ -44,22 +44,24 @@ var link = svg.selectAll(".link"),
 
 // Function for randomising from StackOverflow #1533910
 
-(function($) {
+(function ($) {
 
-$.fn.randomize = function(childElem) {
-  return this.each(function() {
+  $.fn.randomize = function (childElem) {
+    return this.each(function () {
       var $this = $(this);
       var elems = $this.children(childElem);
 
-      elems.sort(function() { return (Math.round(Math.random())-0.5); });  
+      elems.sort(function () {
+        return (Math.round(Math.random()) - 0.5);
+      });
 
-      $this.detach(childElem);  
+      $this.detach(childElem);
 
-      for(var i=0; i < elems.length; i++)
-        $this.append(elems[i]);      
+      for (var i = 0; i < elems.length; i++)
+        $this.append(elems[i]);
 
-  });    
-}
+    });
+  }
 })(jQuery);
 
 d3.json(world + "/settings.json", function (error, graph) {
@@ -397,11 +399,22 @@ d3.json(world + "/settings.json", function (error, graph) {
 
           window.clearInterval(window.timer);
 
+          // From StackOverflow #6312993
+
+          var timeConversion = function (seconds) {
+
+            var date = new Date(null);
+            date.setSeconds(seconds); // specify value for SECONDS here
+            return date.toISOString().substr(11, 8);
+
+          }
+
           // Show complete message
 
           $.blockUI({
-            message: '<p>' + answerText + '</p><p>You did it in ' + window.timerCounter + ' seconds.</p>'
+            message: '<p>' + answerText + '</p><p>You did it in ' + timeConversion(window.timerCounter) + '</p>' + '<button class="unblock">Close</button>'
           });
+
 
         } else {
 
@@ -448,9 +461,9 @@ d3.json(world + "/settings.json", function (error, graph) {
     $("#answers").show();
 
   })
-  
+
   // Randomise
-  
+
   $("#answers").randomize(".answer:not('.done')");
 
   showHelpText();
