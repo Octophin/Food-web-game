@@ -451,7 +451,7 @@ d3.json(world + "/settings.json", function (error, graph) {
   
   // Randomise
   
-  $("#answers").randomize(".answer:not(.done)");
+  $("#answers").randomize(".answer:not('.done')");
 
   showHelpText();
 
