@@ -42,6 +42,26 @@ var svg = d3.select("body").append("svg")
 var link = svg.selectAll(".link"),
   node = svg.selectAll(".node");
 
+// Function for randomising from StackOverflow #1533910
+
+(function($) {
+
+$.fn.randomize = function(childElem) {
+  return this.each(function() {
+      var $this = $(this);
+      var elems = $this.children(childElem);
+
+      elems.sort(function() { return (Math.round(Math.random())-0.5); });  
+
+      $this.detach(childElem);  
+
+      for(var i=0; i < elems.length; i++)
+        $this.append(elems[i]);      
+
+  });    
+}
+})(jQuery);
+
 d3.json(world + "/settings.json", function (error, graph) {
 
   var showHelpText = function () {
@@ -268,6 +288,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       return d.source.colour;
 
     })
+    .style("stroke-width", "2")
     .attr("marker-end", function (d) {
 
       return "url(#" + d.source.name + ")";
@@ -427,6 +448,10 @@ d3.json(world + "/settings.json", function (error, graph) {
     $("#answers").show();
 
   })
+  
+  // Randomise
+  
+  $("#answers").randomize(".answer:not(.done)");
 
   showHelpText();
 
