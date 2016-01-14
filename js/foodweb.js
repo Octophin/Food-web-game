@@ -199,10 +199,10 @@ d3.json(world + "/settings.json", function (error, graph) {
       .append("svg:image")
       .attr("patternUnits", "userSpaceOnUse")
       .attr("xlink:href", world + "/images/" + node.name + ".png")
-      .attr("width", 55)
-      .attr("height", 55)
-      .attr("x", -5)
-      .attr("y", -5)
+      .attr("width", 50)
+      .attr("height", 50)
+      .attr("x", -0)
+      .attr("y", -0)
 
 
     defs.selectAll("marker")
