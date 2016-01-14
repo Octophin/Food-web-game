@@ -31,9 +31,11 @@ $("body").on("click", ".unblock", function () {
   if (window.currentPoints === window.totalPoints) {
 
     $("#help").text("Select the vulture to remove it from the food web.");
+    $("circle#vulture").css("cursor", "pointer");
 
     $("body").on("click", "circle#vulture", function () {
-
+      
+      $("circle#vulture").css("fill", "none").attr("r", "40");
       $("circle#feral-dog").css("fill", "url('#" + "feral-dog-big" + "img')").attr("r", "40");
       $("circle#hyaena").css("fill", "url('#" + "hyaena-big" + "img')").attr("r", "35");
 
