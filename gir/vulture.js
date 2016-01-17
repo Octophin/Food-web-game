@@ -40,7 +40,7 @@ $("body").on("click", ".unblock", function () {
       $("circle#feral-dog").css("fill", "url('#" + "feral-dog-big" + "img')").attr("r", "40");
       $("circle#carrion").css("fill", "url('#" + "carrion-big" + "img')").attr("r", "40");
 
-      $("#help").text("Feral dog and hyaena numbers will go up.");
+      $("#help").text("Amount of carrion and number of feral dogs increases.");
 
     })
 
