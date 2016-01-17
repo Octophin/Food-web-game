@@ -15,12 +15,12 @@ defs.append("svg:pattern")
   .attr("y", -5)
 
 defs.append("svg:pattern")
-  .attr("id", "hyaena-big" + "img")
+  .attr("id", "carrion-big" + "img")
   .attr("width", 1)
   .attr("height", 1)
   .append("svg:image")
   .attr("patternUnits", "userSpaceOnUse")
-  .attr("xlink:href", world + "/images/hyaena.png")
+  .attr("xlink:href", world + "/images/carrion.png")
   .attr("width", 90)
   .attr("height", 90)
   .attr("x", -5)
@@ -36,9 +36,9 @@ $("body").on("click", ".unblock", function () {
 
     $("body").on("click", "circle#vulture", function () {
 
-      $("circle#vulture").css("fill", "none").attr("r", "40");
+      $("circle#vulture").attr("r", "10");
       $("circle#feral-dog").css("fill", "url('#" + "feral-dog-big" + "img')").attr("r", "40");
-      $("circle#hyaena").css("fill", "url('#" + "hyaena-big" + "img')").attr("r", "35");
+      $("circle#carrion").css("fill", "url('#" + "carrion-big" + "img')").attr("r", "40");
 
       $("#help").text("Feral dog and hyaena numbers will go up.");
 
