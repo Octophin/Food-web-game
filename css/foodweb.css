@@ -182,3 +182,39 @@ button.unblock {
   font-size: 100%;
   cursor: pointer;
 }
+@media screen and (min-width:1600px) {
+  body {
+    width: 1600px;
+  }
+  #panel {
+    width: 900px;
+  }
+  #world {
+    left: 940px;
+  }
+  .answer {
+    width: 100px;
+    height: 130px;
+  }
+  #answers img {
+    width: 90px;
+    height: 90px;
+  }
+  .answer.done:before {
+    top: 20px;
+    left: 60px;
+    font-size: 100%;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    line-height: 25px;
+  }
+  .answer button {
+    font-size: 100%;
+  }
+  #message .inner {
+    width: 400px;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+}
