@@ -34,7 +34,7 @@ $("body").on("click", ".unblock", function () {
 
     $("circle#vulture").css("cursor", "move");
 
-    $("body").on("click", "circle#vulture", function () {
+    var vulture = function () {
 
       $("circle#vulture").attr("r", "10");
       $("circle#feral-dog").css("fill", "url('#" + "feral-dog-big" + "img')").attr("r", "40");
@@ -42,7 +42,11 @@ $("body").on("click", ".unblock", function () {
 
       $("#help").text("Amount of carrion and number of feral dogs increases.");
 
-    })
+    };
+
+    $("body").on("click", "circle#vulture", vulture);
+    $("body").on("touchstart", "circle#vulture", vulture);
+    
 
   }
 
