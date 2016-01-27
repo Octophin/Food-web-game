@@ -151,13 +151,26 @@ body {
   text-align: center;
   color: #014f9e;
 }
+.info-image-header {
+  position: relative;
+  top: -10px;
+  height: 140px;
+  width: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+#header-info-image {
+  position: relative;
+  top: -30px;
+  width: auto;
+}
 #info-image {
   cursor: move;
-  width: 150px;
+  width: 60px;
   display: block;
   height: auto;
   margin: auto;
-  border-radius: 200px;
+  border-radius: 60px;
   border-style: solid;
   border-color: #014f9e;
 }

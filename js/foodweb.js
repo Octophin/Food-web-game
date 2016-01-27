@@ -239,8 +239,8 @@ d3.json(world + "/settings.json", function (error, graph) {
       $("#help").html(settings.helpTextSelected);
 
       $("#info-title").text(animal.name.toUpperCase());
+      $("#header-info-image").attr("src", world + "/images/" + animal.name + ".png");
       $("#info-image").attr("src", world + "/images/" + animal.name + ".png");
-      $("#info-image-drag").attr("src", world + "/images/" + animal.name + ".png");
 
 
     });
