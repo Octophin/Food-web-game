@@ -3,34 +3,39 @@
     "extraScript": "vulture.js",
     "stepMode": true,
     "stepModeDirection": "up",
-    "introText": "<p>The aim of this game is to drag and drop the animals of the Gir Forest into the correct place in the food web. By clicking on the animals, you will get some extra information to help you work out who eats who. The arrows show what is eaten by each animal so follow these to make sure the animals are in the right place. Good luck!</p><p><b>Top Tip: </b>Start from the bottom and work your way up the food web. It’s easier this way!</p>",
+    "introText": "<p>The aim of this game is to drag and drop the animals of the Gir Forest into the correct place in the food web. By clicking on the animals, you will get some extra information to help you work out who eats who. The arrows show what is eaten by each animal so follow these to make sure the animals are in the right place.</p><p><b>Good Luck!</b></p>",
     "completeText": "Congratulations! You have successfully completed the Gir Forest food web and can now see how complex the ecosystem is. Everything is dependent on each other for survival.",
     "helpTextList": "Select a species to see where it should go on the web",
     "helpTextSelected": "Drag the animal into the right slot on the food web",
     "levelNames": [{
-        "name": "predators",
-        "help": "Put all the predators on the web"
+        "name": "Apex predators",
+        "help": "Select an apex predator to put it on the web"
     }, {
-        "name": "third consumers",
-        "help": "Put all the third consumers on the web"
+        "name": "Tertiary consumers",
+        "help": "Select a tertiary consumer to put it on the web"
     }, {
-        "name": "second consumers",
-        "help": "Put all the second consumers on the web"
+        "name": "Secondary consumers",
+        "help": "Select a secondary consumer to put it on the web"
     }, {
-        "name": "first consumers",
-        "help": "Put all the first consumers on the web"
+        "name": "Primary consumers",
+        "help": "Select a primary consumer to put it on the web"
     }, {
-        "name": "producers",
-        "help": "Put all the producers on the web"
+        "name": "Producers",
+        "help": "Select a producer to put it on the web"
     }
                   ]
   },
   "species": [
-    {
+   {
+      "colour": "LawnGreen",
+      "name": "vulture",
+      "level": 1,
+      "description": "Indian vultures are scavengers meaning they feed on dead things. Indian vultures rely on carrion to feed. They are also crucial to the food web as the vultures’ digestive system can process diseases and remove them from the food web. They act like a ‘dead-end’ for diseases."
+    }, {
       "colour": "AliceBlue",
       "name": "ants",
       "level": 4,
-      "description": "Ants feed primarily on fruits. However, they are eaten by many insectivores including peafowl and Hanuman langurs. They are also the main diet for pangolins so are important in the food web."
+      "description": "<p>Ants feed primarily on <strong>fruits</strong>. However, they are eaten by many insectivores including peafowl and Hanuman langurs. They are also the main diet for pangolins so are important in the food web.</p>"
     },
     {
       "colour": "Aqua",
@@ -140,12 +145,6 @@
       "name": "serpent-eagle",
       "level": 1,
       "description": "Crested Serpent Eagles are an apex predator and rarely get predated on by other species. They hunt many small animals such as pythons, mongooses, langurs, peafowl, chital, hare and even sometimes tortoises."
-    },
-    {
-      "colour": "LawnGreen",
-      "name": "vulture",
-      "level": 1,
-      "description": "Indian vultures are scavengers meaning they feed on dead things. Indian vultures rely on carrion to feed. They are also crucial to the food web as the vultures’ digestive system can process diseases and remove them from the food web. They act like a ‘dead-end’ for diseases."
     }, {
       "colour": "LightGreen",
       "name": "tree",
