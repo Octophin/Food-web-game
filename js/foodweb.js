@@ -235,7 +235,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
       $("#answers").hide();
 
-      $("#message").show().find(".inner").text(animal.description);
+      $("#message").show().find(".inner").html(animal.description);
       $("#help").html(settings.helpTextSelected);
 
       $("#info-title").text(animal.name.toUpperCase());
