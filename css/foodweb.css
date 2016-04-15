@@ -140,7 +140,6 @@ body {
 }
 #close-info {
   position: relative;
-  top: 70px;
   background-color: #014f9e;
   color: white;
   padding: 5px;
@@ -172,11 +171,10 @@ body {
 #info-image {
   cursor: move;
   width: 60px;
-  position: absolute;
-  left: 50%;
+  position: relative;
   display: block;
   height: auto;
-  margin-left: -30px;
+  margin:auto;
   border-radius: 60px;
   border-style: solid;
   border-color: #014f9e;
