@@ -17,9 +17,9 @@ body {
   width: 1024px;
   border-style: none;
   height: 650px;
-  -webkit-box-shadow: 0px 6px 32px -4px rgba(0,0,0,0.62);
--moz-box-shadow: 0px 6px 32px -4px rgba(0,0,0,0.62);
-box-shadow: 0px 6px 32px -4px rgba(0,0,0,0.62);
+  -webkit-box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
+  box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
 }
 #world {
   left: 390px;
@@ -139,6 +139,8 @@ box-shadow: 0px 6px 32px -4px rgba(0,0,0,0.62);
   padding: 10px;
 }
 #close-info {
+  position: relative;
+  top: 70px;
   background-color: #014f9e;
   color: white;
   padding: 5px;
@@ -170,9 +172,11 @@ box-shadow: 0px 6px 32px -4px rgba(0,0,0,0.62);
 #info-image {
   cursor: move;
   width: 60px;
+  position: absolute;
+  left: 50%;
   display: block;
   height: auto;
-  margin: auto;
+  margin-left: -30px;
   border-radius: 60px;
   border-style: solid;
   border-color: #014f9e;
