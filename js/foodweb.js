@@ -10,11 +10,11 @@ if (!world) {
 
 }
 
-var width = 600,
+var width = 680,
   height = 640,
   levelHeight = 130,
   topOffset = 70,
-  spacing = 70;
+  spacing = 85;
 
 var levels = [];
 
@@ -199,8 +199,8 @@ d3.json(world + "/settings.json", function (error, graph) {
       .append("svg:image")
       .attr("patternUnits", "userSpaceOnUse")
       .attr("xlink:href", world + "/images/" + node.name + ".png")
-      .attr("width", 50)
-      .attr("height", 50)
+      .attr("width", 70)
+      .attr("height", 70)
       .attr("x", -0)
       .attr("y", -0)
 
@@ -309,7 +309,7 @@ d3.json(world + "/settings.json", function (error, graph) {
       return d.level;
 
     })
-    .attr("r", 25)
+    .attr("r", 35)
     .attr("data-done", function (d) {
 
       if (d.done) {
