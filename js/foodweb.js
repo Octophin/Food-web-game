@@ -1,6 +1,6 @@
 // Get the world name from the query string
 
-var world = document.location.href.split("world=")[1];
+var world = "gir";
 
 if (!world) {
 
