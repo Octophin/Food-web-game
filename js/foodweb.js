@@ -64,7 +64,12 @@ var link = svg.selectAll(".link"),
   }
 })(jQuery);
 
-d3.json(world + "/settings.json", function (error, graph) {
+d3.json(world + "/settings.json", function (error, graph) if(error){
+
+alert(error);
+
+}
+{
 
   var showHelpText = function () {
 
