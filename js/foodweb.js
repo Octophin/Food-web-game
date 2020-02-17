@@ -366,7 +366,11 @@ d3.json(world + "/settings.json", function (error, graph) {
       }
 
     })
-    .attr("ondragover", "event.preventDefault()")
+    .on("dragover", function(){
+
+      d3.event.preventDefault();
+
+    })
     .on("drop", function (d) {
 
       if (d3.select(this).attr("data-blocked") === "true") {
