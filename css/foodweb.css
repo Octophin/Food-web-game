@@ -59,6 +59,8 @@ body {
   overflow: hidden;
   background-color: white;
   height: 505px;
+  display: flex;
+  flex-wrap: wrap;
 }
 #answers img {
   width: 60px;
