@@ -34,7 +34,7 @@ var force = d3.layout.force()
   .linkDistance(200)
   .on("tick", tick);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("section#foodweb").append("svg")
   .attr("width", width)
   .attr("height", height)
   .attr("id", "world");
@@ -144,7 +144,7 @@ d3.json(world + "/settings.json", function (error, graph) {
 
     var offset = levelHeight * index;
 
-    $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index].name + "</h2></div>").appendTo("body");
+    $("<div class='level' style='top:" + offset + "px; height:" + levelHeight + "px'><h2 class='level-name'>" + levelNames[index].name + "</h2></div>").appendTo("section#foodweb");
 
   });
 

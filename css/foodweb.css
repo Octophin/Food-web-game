@@ -20,11 +20,19 @@ body {
   -webkit-box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
   -moz-box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
   box-shadow: 0px 6px 32px -4px rgba(0, 0, 0, 0.62);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 #world {
-  left: 390px;
-  position: absolute;
+  /* left: 390px; */
+  /* position: absolute; */
   z-index: 1;
+  position: relative;
+}
+#foodweb {
+  position: relative;
+  flex: 2;
 }
 .level {
   display: block;
@@ -49,11 +57,14 @@ body {
   height: 650px;
   background-color: white;
   z-index: 2;
-  position: absolute;
+  /* position: absolute; */
   left: 0px;
   width: 380px;
+  min-width: 320px;
   border-style: none;
   border-width: 0 4px 0 0;
+  position: relative;
+  flex: 1;
 }
 #answers {
   overflow: hidden;
@@ -245,3 +256,39 @@ button.unblock {
     margin: 10px auto;
   }
 }
+
+
+
+@media screen and (max-width: 960px){
+  html, body{
+    overflow: auto;
+  }
+  body{
+    flex-direction: row;
+    padding-bottom: 2rem;
+    height: unset;
+  }
+  #foodweb {
+    flex: 2 0 90%;
+    display: flex;
+    justify-content: center;
+  }
+  #panel {
+    height: unset;
+    width: 100%;
+    flex: 2 1 90%;
+    padding-bottom: 1rem;
+  }
+  #answers {
+    height: unset;
+    justify-content: center;
+  }
+  #message {
+    height: unset;
+  }
+  .blockMsg {
+    width: 80% !important;
+    left: 10% !important;
+  }
+}
+
