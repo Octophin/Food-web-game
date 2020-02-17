@@ -58,6 +58,12 @@
     },
     {
       "colour": "BurlyWood",
+      "name": "indian-hare",
+      "level": 4,
+      "description": "Indian Hare are herbivorous. In the wet season, hares eat mostly grass shoots but in the dry season they tend to eat more flowering plants. Despite being able to run very fast, Indian Hare have lots of predators including feral dogs, hyaenas, jackals, mongoose, eagles and snakes."
+    },
+    {
+      "colour": "DarkKhaki",
       "name": "cockroach",
       "level": 4,
       "description": "Cockroaches are an important part of the food web as they are detritivores and eat dead things, mostly plant material like trees, grasses and fruit. They are eaten by many small consumers like mongoose and peafowl."
@@ -91,12 +97,6 @@
       "name": "hyaena",
       "level": 1,
       "description": "Hyaenas are an apex predator and scavenger so will often eat carrion. However they will also eat a range of other prey including snakes, mongoose, jackals, nilgai, hare and rarely, even porcupines!"
-    },
-    {
-      "colour": "DarkKhaki",
-      "name": "indian-hare",
-      "level": 4,
-      "description": "Indian Hare are herbivorous. In the wet season, hares eat mostly grass shoots but in the dry season they tend to eat more flowering plants. Despite being able to run very fast, Indian Hare have lots of predators including feral dogs, hyaenas, jackals, mongoose, eagles and snakes."
     },
     {
       "colour": "DarkOrchid",
