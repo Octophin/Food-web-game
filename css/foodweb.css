@@ -5,7 +5,8 @@
 }
 html,
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow: auto;
   font-size: 18px;
   margin: 0px;
   height: 100%;
@@ -24,15 +25,20 @@ body {
   flex-wrap: wrap;
   overflow: auto;
 }
+/* #world {
+left: 390px;
+  position: absolute;
+} */
 #world {
-  /* left: 390px; */
-  /* position: absolute; */
   z-index: 1;
   position: relative;
 }
 #foodweb {
   position: relative;
   flex: 2;
+  max-width: 720px;
+  display: flex;
+  justify-content: center;
 }
 .level {
   display: block;
@@ -227,9 +233,9 @@ button.unblock {
   #panel {
     width: 900px;
   }
-  #world {
+  /* #world {
     left: 940px;
-  }
+  } */
   .answer {
     width: 100px;
     height: 130px;
@@ -272,6 +278,7 @@ button.unblock {
     flex: 2 0 90%;
     display: flex;
     justify-content: center;
+    max-width: 100%;
   }
   #panel {
     height: unset;
